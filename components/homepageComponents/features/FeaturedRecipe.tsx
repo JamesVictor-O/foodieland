@@ -1,5 +1,5 @@
 import React from "react";
-import Time from "../Time";
+import Time from "@/components/Time";
 import Image from "next/image";
 
 
@@ -20,7 +20,7 @@ const FeaturedRecipe = () => {
         </div>
            
         {/* timer and fork */}
-          <Time/>
+        <Time mealType={ "chicken" } />
         {/* profile  & play*/}
         <div className="flex flex-row  items-center mt-8 justify-between">
           {/* profile */}

@@ -1,6 +1,6 @@
 import React from 'react'
-
-const Time = () => {
+const Time = ({ mealType }:{ mealType:string}) => {
+  
   return (
         <div className="flex flex-row items-center mt-4">
           {/* timew */}
@@ -12,7 +12,7 @@ const Time = () => {
           <div className="flex flex-row items-center bg-[#f4f0f0] p-1 rounded-full w-[119px] h-[40px] pl-2 ml-10">
             {/* <ForkKnife/> */}
             <img src="homepage/ForkKnife.svg" alt="timer" />
-            <span className="text-[14px] font-normal ml-2">Chicken</span>
+        <span className="text-[14px] font-normal ml-2">{ mealType}</span>
           </div>
 
         </div>
