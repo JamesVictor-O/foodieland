@@ -10,7 +10,8 @@ interface RecipesProps{
         id: string,
   },
    style:{
-    cardWith: string,
+     cardWith: string,
+     cardHight:string,
     h2Width: string,
      imgHight: string,
      background: string,
@@ -23,7 +24,7 @@ interface RecipesProps{
 const ReciepsCard = ({ recipe,style}: RecipesProps) => {
 
   return (
-      <main className={`w-${style.cardWith} h-[434px] rounded-[15px] flex flex-col items-center overflow-hidden bg-[${style.background}] p-3`}>
+      <main className={`w-[${style.cardWith}] h-[${style.cardHight}] rounded-[15px] flex flex-col items-center overflow-hidden bg-[${style.background}] p-3`}>
           {/* recipe image */}
         <div className={`relative w-[${style.imaWidth}] h-[${style.imgHight}] overflow-hidden mt-[${style.mt}] rounded-[20px]`}>
               <img src={recipe.recipeUrl} alt='recipe image' className='object-contain w-full h-full' />

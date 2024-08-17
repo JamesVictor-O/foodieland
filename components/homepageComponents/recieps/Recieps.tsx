@@ -58,15 +58,16 @@ const Recipes = () => {
     ]);
     const style={
       cardWith: '400px',
+      cardHight:"434px",
       h2Width: "352px",
-      imgHight: "250",
-      imaWidth: "360",
+      imgHight: "250px",
+      imaWidth: "360px",
        text:"24px",
       background:"#e3eff5"
       
   }
   return (
-    <div className="w-[1280px] h-[1616px] mt-20">
+    <div className="hidden w-[1280px] h-[1616px] mt-20">
       <div className="w-full flex justify-between items-center flex-col ">
         <h2 className="font-semibold text-[38px] w-[526px] h-[58px]">
           Simple and tasty recipes

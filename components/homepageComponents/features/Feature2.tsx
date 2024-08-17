@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Feature2 = () => {
     return (
-        <div className="relative w-[1280px] h-[449px] bg-white flex flex-row items-center rounded-[20px] overflow-hidden mt-12">
+        <div className="hidden relative w-[1280px] h-[449px] bg-white md:flex flex-row items-center rounded-[20px] overflow-hidden mt-12">
           <div className="w-[50%] h-full p-9">
     
             {/* massage */}

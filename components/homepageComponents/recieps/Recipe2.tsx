@@ -57,18 +57,19 @@ const Recipe2 = () => {
       },
     ]);
     const style={
-        cardWith: '290px',
-        h2Width: "290",
-        imgHight: "250",
-        imaWidth: "290",
+      cardWith: '290px',
+      cardHight:"316px",
+        h2Width: "290px",
+        imgHight: "250px",
+        imaWidth: "290px",
          text:"18px",
-        background:"white",
+        background:"",
         mt:2
     }
   return (
-    <div className="w-[1280px] h-[868px] mt-20 ">
+    <div className="hidden w-[1280px] h-[868px] mt-48">
       <div className="w-full flex justify-between items-center flex-row ">
-        <h2 className="font-semibold text-[38px] w-[526px] h-[58px]">
+        <h2 className="font-semibold text-[38px] w-[526px] h-14]">
         Try this delicious recipe
         to make your day
         </h2>

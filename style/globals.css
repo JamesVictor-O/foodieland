@@ -34,3 +34,11 @@ body {
 .header_main{
   @apply  flex flex-row items-center justify-between   text-black  border-b-2 border-[#e3e0e0]
 }
+.bgImage {
+  background-image: url('/homepage/Mask Group.png');
+  background-size: cover; /* Add other background properties as needed */
+  background-position: center;
+}
+/* .bg_Image{
+  @apply bg-[url('/homepage/Mask Group.png')] 
+} */

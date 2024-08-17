@@ -38,17 +38,17 @@ const Categories = () => {
   ]);
 
   return (
-    <main className="w-[1280px] h-[342px] mt-9">
-      <div className="flex flex-row justify-between items-center p-9">
-        <h2 className="w-[238px] h-[58px] text-[38px] font-semibold">
+    <main className="w-[100%] h-80 mt-6 lg:mt-9">
+      <div className="flex flex-row justify-between items-center  p-2 md:p-9 ">
+        <h2 className="w-[238px] lg:h-14 text-sm lg:text-4xl font-semibold">
           Categories
         </h2>
-        <button className="bg-[#E7FAFE] w-[200px] rounded-[16px] p-3">
+        <button className="bg-[#E7FAFE] w-[200px] rounded-[16px] p-1 lg:p-3 text-xs md:text-base">
           View All Categories
         </button>
       </div>
 
-      <div className="flex flex-row w-full justify-center align-middle">
+      <div className="grid grid-cols-2 grid-rows-2 gap-2 lg:grid-cols-6 mt-6 md:mt-0 md:w-full ">
         {categoriesClasses.map(items => (
           <ItemCategorie key={items.id } items={items} />
         ))}
