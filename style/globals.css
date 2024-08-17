@@ -39,6 +39,11 @@ body {
   background-size: cover; /* Add other background properties as needed */
   background-position: center;
 }
+.bgImage2 {
+  background-image: url('/homepage/dressed-uniform.png');
+  background-size: cover; /* Add other background properties as needed */
+  background-position: center;
+}
 /* .bg_Image{
   @apply bg-[url('/homepage/Mask Group.png')] 
 } */

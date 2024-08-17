@@ -40,7 +40,7 @@ const Categories = () => {
   return (
     <main className="w-[100%] h-80 mt-6 lg:mt-9">
       <div className="flex flex-row justify-between items-center  p-2 md:p-9 ">
-        <h2 className="w-[238px] lg:h-14 text-sm lg:text-4xl font-semibold">
+        <h2 className="w-[238px] lg:h-14 text-sm lg:text-4xl font-semibold ml-5 md:ml-0">
           Categories
         </h2>
         <button className="bg-[#E7FAFE] w-[200px] rounded-[16px] p-1 lg:p-3 text-xs md:text-base">

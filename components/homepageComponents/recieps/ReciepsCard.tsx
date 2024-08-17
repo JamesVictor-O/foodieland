@@ -35,7 +35,7 @@ const ReciepsCard = ({ recipe,style}: RecipesProps) => {
 
           </div>
           <div className={`flex justify-center align-middle items-center w-[${style.h2Width}] h-[64px] mt-4`}>
-              <p className={`text-[${style.text}] font-semibold`}>{recipe.description }</p>
+              <p className={`md:text-2xl lg:text-[${style.text}] font-semibold`}>{recipe.description }</p>
           </div>
           <Time mealType={ recipe.type} />
 
