@@ -6,7 +6,7 @@ import ReciepsCard from "./ReciepsCard";
    
 
 const Recipe2 = () => {
-    const [recipes, setrecipes] = useState([
+    const [recipes, setRecipes] = useState([
       {
         description: "Mixed Tropical Fruit Salad with Superfood Boosts ",
         recipeUrl: "recipe2/image1.png",
@@ -59,28 +59,28 @@ const Recipe2 = () => {
     const style={
       cardWith: '80%',
       cardHight:"316px",
-        h2Width: "290px",
+        h2Width: "18%px",
         imgHight: "250px",
         imaWidth: "290px",
-         text:"18px",
+        text:"18px",
         background:"",
         mt:2
     }
   return (
-    <div className="w-[100%] h-[868px] mt-48">
-      <div className="w-full flex justify-between items-center flex-row ">
-        <h2 className="font-semibold text-[38px] w-[526px] h-14]">
+    <div className="w-[100%] h-[868px] mt-20 md:mt-48">
+      <div className="w-full flex justify-between items-center flex-col md:flex-row ">
+        <h2 className="font-semibold text-4xl md:w-[526px] md:h-14 text-balance md:text-left ">
         Try this delicious recipe
         to make your day
         </h2>
-        <span className="w-[706px] text-left font-normal text-[15px] mt-6">
+        <span className="text-wrap md:text-left font-normal text-[15px] mt-6">
           Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqut enim ad minim{" "}
         </span>
           </div>
           
           {/* recipe card */}
-       <div className="w-[1280px] grid grid-cols-2 md:grid-cols-4 gap-3 justify-center mt-20">
+       <div className="w-[100%] grid grid-cols-2 md:grid-cols-3 md:gap-10 justify-center mt-8 md:mt-20">
         {recipes.map(recipe => (
             <ReciepsCard key={recipe.id} recipe={recipe} style={style } />
          ))}

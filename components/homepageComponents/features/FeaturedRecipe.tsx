@@ -8,8 +8,8 @@ const FeaturedRecipe = () => {
 
     <>
       {/* for mobile */}
-      <div className="bgImage h-96 md:hidden">
-        <div className=" md:w-[50%] h-full p-4 lg:p-9 md:hidden bg-black opacity-60">
+      <div className="bgImage h-screen md:hidden">
+        <div className="h-full p-4 bg-black opacity-60">
           {/* hot spices */}
           <div className=" p-1 w-[40%] lg:w-[25%] h-11 flex flex-row bg-white items-center justify-center rounded-full">
             <img src="homepage/hotRecipe.svg" alt="Hot Recipe" />
