@@ -8,7 +8,7 @@ import SubscribeCard from "@/components/homepageComponents/subscribeCard/Subscri
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-3 sm:p-5 lg:p-10 ">
+    <main className=" p-3 sm:p-5 lg:p-10 ">
       <FeaturedRecipe />
       <Categories />
       <Recipes />

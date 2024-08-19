@@ -67,7 +67,7 @@ const Recipe2 = () => {
         mt:2
     }
   return (
-    <div className="w-[100%] h-[868px] mt-20 md:mt-48">
+    <div className="w-[100%] h-full mt-20">
       <div className="w-full flex justify-between items-center flex-col md:flex-row ">
         <h2 className="font-semibold text-4xl md:w-[526px] md:h-14 text-balance md:text-left ">
         Try this delicious recipe
