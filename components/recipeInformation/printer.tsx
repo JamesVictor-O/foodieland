@@ -12,7 +12,7 @@ const Printer = () => {
             className="object-center w-6 h-6"
           />
         </div>
-        <h3 className="font-medium text-xs">Print</h3>
+        <h3 className="font-medium text-xs mt-2">Print</h3>
       </div>
 
       {/* share */}
@@ -24,7 +24,7 @@ const Printer = () => {
             className="object-center w-6 h-6"
           />
         </div>
-        <h3 className="font-medium text-xs">Share</h3>
+        <h3 className="font-medium text-xs mt-2">Share</h3>
       </div>
     </main>
   );

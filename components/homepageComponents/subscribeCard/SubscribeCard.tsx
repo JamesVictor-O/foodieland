@@ -2,7 +2,8 @@ import React from "react";
 
 const SubscribeCard = () => {
   return (
-    <main className=" relative w-[1280px] h-[442px] bg-[#E7F9FD] rounded-[10px] mt-40 overflow-hidden">
+    <main className="p-10 my-10">
+      <div className=" relative w-full h-[442px] bg-[#E7F9FD] rounded-[30px] overflow-hidden">
       <div className="absolute right-[34%] top-10 w-[420px] h-[282px] flex flex-col justify-center  items-center">
         <h2 className="text-[30px] font-semibold w-[425px] font-sans flex justify-center">
           Deliciousness to your inbox
@@ -31,7 +32,9 @@ const SubscribeCard = () => {
           className="w-full object-contain"
         />
       </div>
+    </div>
     </main>
+   
   );
 };
 

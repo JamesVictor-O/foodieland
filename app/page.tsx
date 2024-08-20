@@ -14,7 +14,6 @@ export default function Home() {
       <Recipes />
       <Feature2 />
       <Recipe2 />
-      <SubscribeCard/>
     </main>
   );
 }
