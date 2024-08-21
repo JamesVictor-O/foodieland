@@ -39,7 +39,7 @@ const Categories = () => {
 
   return (
     <main className="w-[100%] h-80 mt-6 lg:mt-9">
-      <div className="flex flex-row justify-between items-center  p-2 md:p-9 ">
+      <div className="flex flex-row justify-between items-center  p-2 md:p-9 overflow-hidden">
         <h2 className="w-[238px] lg:h-14 text-sm lg:text-4xl font-semibold ml-5 md:ml-0">
           Categories
         </h2>
@@ -47,12 +47,16 @@ const Categories = () => {
           View All Categories
         </button>
       </div>
-
-      <div className="grid grid-cols-2 grid-rows-2 gap-2 lg:grid-cols-6 mt-6 md:mt-0 md:w-full ">
-        {categoriesClasses.map(items => (
-          <ItemCategorie key={items.id } items={items} />
-        ))}
+   
+      
+      <div className="w-full overflow-x-auto ">
+        <div className="flex flex-row md:grid lg:grid-cols-6 mt-6 md:mt-0 md:w-full w-[900px]">
+          {categoriesClasses.map(items => (
+            <ItemCategorie key={items.id } items={items} />
+          ))}
+        </div>
       </div>
+     
     </main>
   );
 };

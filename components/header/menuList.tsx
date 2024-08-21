@@ -8,7 +8,7 @@ const MenuList = () => {
         <Link href={'/'} className="text-[20px] font-medium mr-4"> Home </Link>
         <li  className="text-[20px] font-medium mr-4"> Recipes </li>
         <Link  href={"/blogs"} className="text-[20px] font-medium mr-4"> Blog </Link>
-        <li  className="text-[20px] font-medium mr-4" > Contact </li>
+        <Link  href={"/contact"} className="text-[20px] font-medium mr-4"> Contact</Link>
         <li  className="text-[20px] font-medium mr-4"> About </li>
       </ul>
     </div>

@@ -67,7 +67,7 @@ const Recipes = () => {
       
   }
   return (
-    <div className="w-[100%] h-full mt-80 md:mt-20">
+    <div className="w-[100%] h-full mt-30 md:mt-20">
       <div className="w-full flex justify-between items-center flex-col ">
         <h2 className="font-semibold text-2xl  md:text-4xl  h-14">
           Simple and tasty recipes
