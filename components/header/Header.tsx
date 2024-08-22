@@ -1,11 +1,13 @@
 import React from "react";
 import MenuList from "./menuList";
 import Image from "next/image";
+import MobileMenu from "../mobleHumburger/mobileMenu";
 
 const Header = () => {
   return (
     <main className="header_main ">
-      <div className="flex flex-row items-center justify-between w-[71.87%]  mx-[20px] sm:mx-[40px] lg:mx-[80px] my-[40px]">
+      <div className=" flex flex-row items-center justify-between w-full  p-10">
+
         {/* logo */}
         <div className="">
           <Image
@@ -17,11 +19,11 @@ const Header = () => {
         </div>
 
         {/* menu */}
-        <MenuList/>
+          <MenuList />
 
         {/* socilas */}
 
-        <div className="flex flex-row items-center">
+        <div className="hidden md:flex flex-row items-center">
           <div className="mr-3">
             <img src="/assets/001-facebook.svg" alt="facebook logo" />
           </div>
@@ -32,6 +34,10 @@ const Header = () => {
             <img src="/assets/004-instagram.svg" alt="instagram logo" />
           </div>
         </div>
+
+
+        {/* mobile menu bar */}
+        <MobileMenu/>
       </div>
     </main>
   );

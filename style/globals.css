@@ -32,7 +32,7 @@ body {
   }
 } */
 .header_main{
-  @apply  flex flex-row items-center justify-between   text-black  border-b-2 border-[#e3e0e0]
+  @apply fixed z-10 flex-row w-full items-center justify-between   text-black bg-white  border-b-2 border-[#e3e0e0]
 }
 .bgImage {
   background-image: url('/homepage/Mask Group.png');

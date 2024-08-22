@@ -8,7 +8,7 @@ const FeaturedRecipe = () => {
 
     <>
       {/* for mobile */}
-      <div className="bgImage h-screen md:hidden">
+      <div className="bgImage h-screen md:hidden mt-24">
         <div className="h-full p-4 bg-black opacity-60">
           {/* hot spices */}
           <div className=" p-1 w-[40%] lg:w-[25%] h-11 flex flex-row bg-white items-center justify-center rounded-full">
@@ -46,7 +46,7 @@ const FeaturedRecipe = () => {
         </div>
      </div>
       {/* for deskstops */}
-    <div className="relative hidden w-[100%] h-[449px] bg-[#E7FAFE] md:flex flex-row items-center rounded-[20px] overflow-hidden">
+    <div className="relative hidden w-[100%] h-[449px] bg-[#E7FAFE] md:flex flex-row items-center rounded-[20px] overflow-hidden mt-20">
       <div className=" md:w-[50%] h-full p-4 lg:p-9">
         {/* hot spices */}
         <div className=" p-1 w-[40%] lg:w-[25%] h-11 flex flex-row bg-white items-center justify-center rounded-full">
