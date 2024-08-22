@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const MenuList = () => {
   return (
-    <div className="hidden md:block ">
+    <div className=" ">
       <ul className="flex flex-row items-center cursor-pointer font-sans">
         <Link href={'/'} className="text-[20px] font-medium mr-4"> Home </Link>
         <li  className="text-[20px] font-medium mr-4"> Recipes </li>

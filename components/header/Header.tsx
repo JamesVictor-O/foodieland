@@ -1,13 +1,44 @@
-import React from "react";
+"use client"
+
+import React, { useState } from "react";
 import MenuList from "./menuList";
 import Image from "next/image";
 import MobileMenu from "../mobleHumburger/mobileMenu";
 
+
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false)
+  
+  const handleMenuOpen = () => {
+    setIsOpen(prev=> !prev)
+  }
   return (
     <main className="header_main ">
-      <div className=" flex flex-row items-center justify-between w-full  p-10">
+      {/* mobile */}
+      <div className=" flex md:hidden flex-row items-center justify-between w-full  p-10">
+        {/* logo */}
+        <div className="">
+          <Image
+            src="/assets/Foodieland.png"
+            alt="foodieland logo"
+            width={110}
+            height={30}
+          />
+        </div>
 
+        
+
+        
+        <div onClick={handleMenuOpen}>Menu</div>
+
+       {isOpen &&  <MobileMenu/>}
+        {/* humbuger */}
+        
+      </div>
+
+      {/* deckstop */}
+
+      <div className="hidden  md:flex flex-row items-center justify-between w-full  p-10">
         {/* logo */}
         <div className="">
           <Image
@@ -19,11 +50,11 @@ const Header = () => {
         </div>
 
         {/* menu */}
-          <MenuList />
+        <MenuList />
 
         {/* socilas */}
 
-        <div className="hidden md:flex flex-row items-center">
+        <div className="flex flex-row items-center">
           <div className="mr-3">
             <img src="/assets/001-facebook.svg" alt="facebook logo" />
           </div>
@@ -34,10 +65,6 @@ const Header = () => {
             <img src="/assets/004-instagram.svg" alt="instagram logo" />
           </div>
         </div>
-
-
-        {/* mobile menu bar */}
-        <MobileMenu/>
       </div>
     </main>
   );

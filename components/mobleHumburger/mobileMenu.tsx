@@ -3,8 +3,8 @@ import MenuList from "../header/menuList";
 
 const MobileMenu = () => {
   return (
-    <div className=" w-full h-full bg-white ">
-      <MenuList />
+    <div className="absolute top-24 right-0 w-[60%] h-screen bg-white flex flex-col items-center justify-center space-y-8 z-50">
+      {/* <MenuList /> */}
 
       {/* socials icon */}
 
