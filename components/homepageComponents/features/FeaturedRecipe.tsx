@@ -80,13 +80,13 @@ const FeaturedRecipe = () => {
           </div>
         </div>
       </div>
-      <div className=" h-full md:w-[50%] ">
-        <img alt="recipe image" src="/homepage/Mask Group.png" className="w-[100%] h-[100%] object-cover"/>
+        <div className=" h-full md:w-[50%] ">
+          <Image src={"/homepage/Mask Group.png"} width={500} height={500} alt="recipe image" className="w-[100%] h-[100%] object-cover"/>
       </div>
 
       {/* badge */}
-      <div className="hidden md:flex absolute w-[150px] h-[150px] right-[45%] top-10">
-        <img src="homepage/Badge(1).png" alt="" />
+        <div className="hidden md:flex absolute w-[150px] h-[150px] right-[45%] top-10">
+          <Image src={"/homepage/Badge(1).png"} alt="badge" width={100} height={100}/>
       </div>
     </div>
     </>

@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const RecipeHeader = () => {
   return (
@@ -10,7 +11,7 @@ const RecipeHeader = () => {
         {/* sections */}
         <div className="w-44 h-14 flex flex-row items-center">
           <div className="w-14 h-14 rounded-full overflow-hidden ">
-             <img src="/homepage/Untitled design.jpg" alt="profile Picture"  className="w-full object-contain"/>
+            <Image src={'/homepage/Untitled design.jpg'} alt="profile Picture" width={100} height={100} className="w-full object-contain"/>
           </div>
           
           <div className="  ml-2">
