@@ -57,7 +57,7 @@ const Recipes = () => {
       },
     ]);
     const style={
-      cardWith: '80%',
+      cardWith: '100%',
       cardHight:"434px",
       h2Width: "21%",
       imgHight: "250px",

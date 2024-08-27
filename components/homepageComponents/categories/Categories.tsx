@@ -49,7 +49,7 @@ const Categories = () => {
       </div>
    
       
-      <div className="w-full overflow-x-auto ">
+      <div className="w-full overflow-x-auto no-scrollbar">
         <div className="flex flex-row md:grid lg:grid-cols-6 mt-6 md:mt-0 md:w-full w-[900px]">
           {categoriesClasses.map(items => (
             <ItemCategorie key={items.id } items={items} />

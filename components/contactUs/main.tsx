@@ -3,7 +3,7 @@ import ContactForm from "./form";
 
 const Main = () => {
   return (
-    <div className="w-full ">
+    <div className="w-full mt-24">
       <h2 className="w-full text-center mb-14 md:mb-20 text-3xl font-medium mt-4">Contact Us</h2>
       <div className="flex flex-row">
         <div className="hidden md:flex w-[30%] h-[472px] overflow-hidden rounded-xl bg-gradient-to-t from-[#E7FAFE] to-[#f5f7f8]">

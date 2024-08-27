@@ -57,7 +57,7 @@ const Recipe2 = () => {
       },
     ]);
     const style={
-      cardWith: '80%',
+      cardWith: '100%',
       cardHight:"316px",
         h2Width: "18%px",
         imgHight: "250px",
@@ -80,7 +80,7 @@ const Recipe2 = () => {
           </div>
           
           {/* recipe card */}
-       <div className="w-[100%] grid grid-cols-2 md:grid-cols-4 md:gap-5 justify-center mt-8 md:mt-20">
+       <div className="w-[100%] grid gap-2 grid-cols-2 md:grid-cols-4 md:gap-5 justify-center mt-8 md:mt-20">
         {recipes.map(recipe => (
             <ReciepsCard key={recipe.id} recipe={recipe} style={style } />
          ))}

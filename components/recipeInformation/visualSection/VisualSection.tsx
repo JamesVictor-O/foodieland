@@ -8,13 +8,13 @@ const VisualSection = () => {
         {/* video section */}
         <div className="w-full md:w-[65%] h-full rounded-[10px] overflow-hidden">
           <img
-            src="recipes/image7.png"
+            src="/recipes/image7.png"
             alt="food image"
             className="w-full object-cover h-full rounded-xl"
           />
           <div className="absolute w-14 h-14 md:w-28 md:h-28 bg-[#f9f3f3] rounded-full top-[35%] overflow-hidden left-[40%]  md:left-[28%] flex justify-center align-middle items-center">
             <img
-              src="assets/Polygon 1.svg"
+              src="/assets/Polygon 1.svg"
               alt="food image"
               className=" w-5 h-5 md:w-10 object-center md:h-10"
             />

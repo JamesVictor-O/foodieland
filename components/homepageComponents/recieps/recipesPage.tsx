@@ -1,16 +1,27 @@
-import React from 'react'
-type AllrecipesProps = {
-    recipes : {
-        description: string,
-    recipeUrl: string,
-    type: string,
-    id: string,
-    }
+
+import ReciepsCard from '@/components/homepageComponents/recieps/ReciepsCard'
+import { allRecipes } from '@/data' 
+
+
+
+const AllRecipes = () => {
+  const style={
+    cardWith: '100%',
+    cardHight:"434px",
+    h2Width: "21%",
+    imgHight: "250px",
+    imaWidth: "360px",
+    text:"24px",
+    background:"#e3eff5"
+    
 }
-const AllRecipes = ({recipes}:AllrecipesProps) => {
   return (
-    <div>
-      
+    <div className='bg-[#E7F9FD] mx-5 grid-cols-2 grid md:grid-cols-3 pt-20  md:pt-40'>
+       {allRecipes.map((recipe) => (
+         <div className=''key={recipe.id} >
+            <ReciepsCard recipe={recipe} style={style} />
+       </div>
+      ))}
     </div>
   )
 }

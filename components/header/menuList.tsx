@@ -3,15 +3,14 @@ import Link from "next/link";
 
 const MenuList = () => {
   return (
-    <div className=" ">
-      <ul className="flex flex-row items-center cursor-pointer font-sans">
-        <Link href={'/'} className="text-[20px] font-medium mr-4"> Home </Link>
-        <li  className="text-[20px] font-medium mr-4"> Recipes </li>
-        <Link  href={"/blogs"} className="text-[20px] font-medium mr-4"> Blog </Link>
-        <Link  href={"/contact"} className="text-[20px] font-medium mr-4"> Contact</Link>
-        <li  className="text-[20px] font-medium mr-4"> About </li>
-      </ul>
-    </div>
+    <>
+      <Link href={'/'} className="text-xl font-medium mr-4 hover:border-b-2 border-black p-1"> Home</Link>
+      <Link href={'/recipes'} className="text-xl font-medium mr-4 hover:border-b-2 border-black p-1">Recipes</Link>
+      <Link href={"/blogs"} className="text-xl font-medium mr-4 hover:border-b-2 border-black p-1">Blog</Link>
+      <Link  href={"/contact"} className="text-xl font-medium mr-4 hover:border-b-2 border-black p-1">Contact</Link>
+      <Link href={'/'} className="text-xl font-medium mr-4 hover:border-b-2 border-black p-1">About</Link>
+     
+    </>
   );
 };
 

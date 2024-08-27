@@ -8,8 +8,8 @@ const FeaturedRecipe = () => {
 
     <>
       {/* for mobile */}
-      <div className="bgImage h-screen md:hidden mt-24">
-        <div className="h-full p-4 bg-black opacity-60">
+      <div className="bgImage h-screen hidden mt-24">
+        <div className="h-full p-4 bg-black opacity-60 flex flex-col items-center">
           {/* hot spices */}
           <div className=" p-1 w-[40%] lg:w-[25%] h-11 flex flex-row bg-white items-center justify-center rounded-full">
             <img src="homepage/hotRecipe.svg" alt="Hot Recipe" />
@@ -17,17 +17,17 @@ const FeaturedRecipe = () => {
           </div>
 
           {/* massage */}
-          <div className="mt-6 w-full">
-            <h2 className=" text-[23px] w-full  lg:text-[46px] font-semibold  lg:w-[86%] text-white">Spicy delicious chicken wings</h2>
-            <p className="text-[13px] md:text-[16px] font-normal font-sans text-white">Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim ad minim </p>
+          <div className="mt-8 w-full">
+            <h2 className=" text-2xl w-full font-semibold text-center  text-white">Spicy delicious chicken wings</h2>
+            <p className="text-xl font-normal font-sans text-white text-center mt-2">Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim ad minim </p>
           </div>
             
           {/* timer and fork */}
-          <div className="mt-8">
+          <div className="mt-8 ">
           <Time mealType={ "chicken" } />
          </div>
           {/* profile  & play*/}
-          <div className="flex flex-row  items-center mt-8 justify-between">
+          <div className="flex flex-row  items-center mt-20 justify-between">
             {/* profile */}
             <div className="w-[163px] h-[50px] flex flex-row items-center ">
               <img src="homepage/Untitled design.jpg" alt="" className="object-cover w-[50px] h-[50px] rounded-full" />
@@ -46,7 +46,7 @@ const FeaturedRecipe = () => {
         </div>
      </div>
       {/* for deskstops */}
-    <div className="relative hidden w-[100%] h-[449px] bg-[#E7FAFE] md:flex flex-row items-center rounded-[20px] overflow-hidden mt-20">
+    <div className="relative  w-[100%] h-full md:h-[449px] bg-[#E7FAFE] flex flex-col md:flex-row items-center rounded-[20px] overflow-hidden mt-20">
       <div className=" md:w-[50%] h-full p-4 lg:p-9">
         {/* hot spices */}
         <div className=" p-1 w-[40%] lg:w-[25%] h-11 flex flex-row bg-white items-center justify-center rounded-full">
@@ -80,7 +80,7 @@ const FeaturedRecipe = () => {
           </div>
         </div>
       </div>
-      <div className="hidden md:flex h-[449px] w-[50%] ">
+      <div className=" h-full md:w-[50%] ">
         <img alt="recipe image" src="/homepage/Mask Group.png" className="w-[100%] h-[100%] object-cover"/>
       </div>
 

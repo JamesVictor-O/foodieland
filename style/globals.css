@@ -44,6 +44,10 @@ body {
   background-size: cover; /* Add other background properties as needed */
   background-position: center;
 }
+.no-scrollbar {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
 /* .bg_Image{
   @apply bg-[url('/homepage/Mask Group.png')] 
 } */

@@ -1,10 +1,24 @@
 import React from "react";
+import Link from "next/link";
 import MenuList from "../header/menuList";
+interface MobileProps{
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-const MobileMenu = () => {
+const MobileMenu = ({setIsOpen}: MobileProps) => {
+  
+  const handleModelClosing = () => {
+    setIsOpen(prev=> !prev)
+  }
   return (
-    <div className="absolute top-24 right-0 w-[60%] h-screen bg-white flex flex-col items-center justify-center space-y-8 z-50">
-      {/* <MenuList /> */}
+    <div className="absolute top-16 right-0 w-full h-screen bg-white flex flex-col items-center  space-y-8 z-50">
+      <div className="flex flex-col items-center mt-10">
+      <Link href={'/'} onClick={handleModelClosing} className="text-base font-normal bg-[#c0e2ee] p-2 rounded-lg w-24 text-center mb-2"> Home</Link>
+      <Link href={'/recipes'} onClick={handleModelClosing} className="text-base font-normal bg-[#c0e2ee] p-2 rounded-lg w-24 text-center mb-2">Recipes</Link>
+      <Link href={"/blogs"} onClick={handleModelClosing} className="text-base font-normal bg-[#c0e2ee] p-2 rounded-lg w-24 text-center mb-2">Blog</Link>
+      <Link  href={"/contact"} onClick={handleModelClosing} className="text-base font-normal bg-[#c0e2ee] p-2 rounded-lg w-24 text-center mb-2">Contact</Link>
+      <Link href={'/'} onClick={handleModelClosing} className="text-base font-normal bg-[#c0e2ee] p-2 rounded-lg w-24 text-center mb-2">About</Link>
+     </div>
 
       {/* socials icon */}
 

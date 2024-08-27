@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <main className="header_main ">
       {/* mobile */}
-      <div className=" flex md:hidden flex-row items-center justify-between w-full  p-10">
+      <div className=" flex md:hidden flex-row items-center justify-between w-full  p-5">
         {/* logo */}
         <div className="">
           <Image
@@ -29,9 +29,15 @@ const Header = () => {
         
 
         
-        <div onClick={handleMenuOpen}>Menu</div>
+        <div onClick={handleMenuOpen} className="w-8 h-8">
+          {!isOpen ?
+            <img src="/assets/icons8-hamburger-menu.svg" alt="humbugerIcon" className="w-ful h-full object-contain" /> :
+            <img src="assets/icons8-close.svg" alt="humbugerIcon" className="w-ful h-full object-contain" />
+        }
+          
+        </div>
 
-       {isOpen &&  <MobileMenu/>}
+        {isOpen && <MobileMenu setIsOpen={setIsOpen} />}
         {/* humbuger */}
         
       </div>
@@ -50,7 +56,9 @@ const Header = () => {
         </div>
 
         {/* menu */}
-        <MenuList />
+        <div className="font-sans">
+          <MenuList />
+        </div>
 
         {/* socilas */}
 

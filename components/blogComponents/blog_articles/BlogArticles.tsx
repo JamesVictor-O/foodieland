@@ -7,7 +7,7 @@ const BlogArticles = () => {
         <img
           src="recipes/image5.png"
           alt="image of food"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-fill md:object-cover"
         />
       </div>
       <div className="ml-4 md:py-3">
@@ -20,11 +20,11 @@ const BlogArticles = () => {
         </p>
         <div className="mt-2  md:mt-7 flex flex-row items-center">
           <div className="w-36 h-8 md:h-10 flex flex-row items-center">
-            <div className="w-10 h-10 overflow-hidden rounded-full">
+            <div className="w-8 h-8 md:w-10 md:h-10 overflow-hidden rounded-full">
               <img
                 src="homepage/Untitled design.jpg"
                 alt=""
-                className="w-full h-full object-cover"
+                className="w-full h-full object-center md:object-cover"
               />
             </div>
             <h3 className="text-xs md:text-sm font-bold ml-2">James Victor</h3>

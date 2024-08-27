@@ -22,7 +22,7 @@ const Direction = () => {
               aliquam quaerat voluptatem.
             </p>
             <div className=" mt-10">
-              <img src="assets/Rectangle 23.png" alt="" />
+              <img src="/assets/Rectangle 23.png" alt="" />
             </div>
             <p className="w-full text-left text-sm mt-10">
               emo enim ipsam voluptatem quia voluptas sit aspernatur aut odit

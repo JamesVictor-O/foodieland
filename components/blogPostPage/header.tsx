@@ -2,7 +2,7 @@ import React from "react";
 
 const PostPageHeader = () => {
   return (
-    <div className="w-full h-64 bg-white flex flex-col justify-center align-middle items-center">
+    <div className="w-full h-64 bg-white flex flex-col justify-center align-middle items-center mt-24">
       <h2 className="w-[100%] text-center font-semibold text-3xl md:text-6xl ">
         Full Guide to Becoming a Professional Chef
       </h2>

@@ -7,7 +7,7 @@ const Printer = () => {
         {/* print */}
         <div className="w-12 h-12 rounded-full bg-[#E7FAFE] flex justify-center align-middle items-center">
           <img
-            src="assets/printer.svg"
+            src="/assets/printer.svg"
             alt="print image"
             className="object-center w-6 h-6"
           />
@@ -19,7 +19,7 @@ const Printer = () => {
       <div className="w-20 h-20 flex flex-col items-center ">
         <div className="w-12 h-12 rounded-full bg-[#E7FAFE] flex justify-center align-middle items-center">
           <img
-            src="assets/share.svg"
+            src="/assets/share.svg"
             alt="print image"
             className="object-center w-6 h-6"
           />
