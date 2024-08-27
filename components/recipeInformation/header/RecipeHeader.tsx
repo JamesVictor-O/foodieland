@@ -1,11 +1,11 @@
 import React from "react";
 import Image from "next/image";
 
-const RecipeHeader = () => {
+const RecipeHeader = ({description}:{description?:string}) => {
   return (
     <div className="w-full md:w-[70%] mb-4 md:h-44 md:mb-0 mt-24">
-      <h2 className="w-full h-10 md:h-20 font-medium md:font-semibold text-2xl sm:text-4xl lg:text-6xl ">
-        Health Japanese Fried Rice
+      <h2 className="w-full h-10 md:h-20 font-bold md:font-semibold text-lg sm:text-2xl lg:text-4xl mb-6 md:mb-3">
+        {description}
       </h2>
       <div className="w-full md:w-[100%] h-12 flex flex-row items-center">
         {/* sections */}

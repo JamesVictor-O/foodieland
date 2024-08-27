@@ -34,7 +34,7 @@ const ReciepsCard = ({ recipe, style }: RecipesProps) => {
           {/* recipe image */}
         <div className={`relative w-[${style.imaWidth}] h-[${style.imgHight}] overflow-hidden mt-[${style.mt}] rounded-[20px]`} onClick={handleClick}>
             
-              <Image src={recipe.recipeUrl} alt='recipe image'width={200} height={100} className='object-contain w-full h-full' />
+              <Image src={recipe.recipeUrl} alt='recipe image'width={500} height={500} className='object-contain w-full h-full' />
 
               <div className=' absolute top-4 right-4 w-[30px] bg-white rounded-full'>
                 <img src="recipes/Vector.png" alt=" heart"  className='w-[20px] p-3 '/>         

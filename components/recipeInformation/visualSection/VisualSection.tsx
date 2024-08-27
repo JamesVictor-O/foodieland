@@ -1,17 +1,21 @@
 import React from "react";
+import Image from "next/image";
 
-const VisualSection = () => {
+const VisualSection = ({ imageUrl }: { imageUrl: string }) => {
   return (
     <main className="relative w-full flex flex-col">
       {/* visual properties */}
-      <div  className="relative w-full md:h-[500px] flex flex-row">
+      <div className="relative w-full md:h-[500px] flex flex-row">
         {/* video section */}
         <div className="w-full md:w-[65%] h-full rounded-[10px] overflow-hidden">
-          <img
-            src="/recipes/image7.png"
+          <Image
+            src={imageUrl}
+            width={500}
+            height={500}
             alt="food image"
             className="w-full object-cover h-full rounded-xl"
           />
+
           <div className="absolute w-14 h-14 md:w-28 md:h-28 bg-[#f9f3f3] rounded-full top-[35%] overflow-hidden left-[40%]  md:left-[28%] flex justify-center align-middle items-center">
             <img
               src="/assets/Polygon 1.svg"
@@ -57,7 +61,15 @@ const VisualSection = () => {
       </div>
       {/* message */}
       <div className="w-full md:h-20 mt-12">
-        <p className="font-normal text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p className="font-normal text-base">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
       </div>
     </main>
   );

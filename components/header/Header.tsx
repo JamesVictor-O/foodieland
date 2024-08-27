@@ -32,7 +32,7 @@ const Header = () => {
         <div onClick={handleMenuOpen} className="w-8 h-8">
           {!isOpen ?
             <img src="/assets/icons8-hamburger-menu.svg" alt="humbugerIcon" className="w-ful h-full object-contain" /> :
-            <img src="assets/icons8-close.svg" alt="humbugerIcon" className="w-ful h-full object-contain" />
+            <img src="/assets/icons8-close.svg" alt="humbugerIcon" className="w-ful h-full object-contain" />
         }
           
         </div>
