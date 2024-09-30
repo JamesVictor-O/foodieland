@@ -1,6 +1,17 @@
 import React from "react";
 
-const BlogArticles = () => {
+interface postProps{
+  post: {
+    post_header: string;
+    post_body: string;
+    post_date: string;
+    post_author: string;
+    post_image: string;
+    post_ID: number;
+  }
+}
+
+const BlogArticles = ({post}:postProps) => {
   return (
     <div className="w-full h-40 md:h-52 flex flex-row p-2  border border-gray-300 rounded-3xl mb-4">
       <div className="overflow-hidden rounded-xl w-[70%]  md:w-72 h-32 md:h-48 ">
@@ -12,11 +23,10 @@ const BlogArticles = () => {
       </div>
       <div className="ml-4 md:py-3">
         <h2 className="font-semibold text-sm md:text-xl md:mb-2">
-          Crochet Projects for Noodle Lovers
+          {post.post_header}
         </h2>
         <p className="font-normal text-xs md:text-sm md:w-[80%]">
-          Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqut enim{" "}
+         {post.post_header}
         </p>
         <div className="mt-2  md:mt-7 flex flex-row items-center">
           <div className="w-36 h-8 md:h-10 flex flex-row items-center">
@@ -27,11 +37,11 @@ const BlogArticles = () => {
                 className="w-full h-full object-center md:object-cover"
               />
             </div>
-            <h3 className="text-xs md:text-sm font-bold ml-2">James Victor</h3>
+            <h3 className="text-xs md:text-sm font-bold ml-2">{post.post_author }</h3>
           </div>
           <div>
             <h3 className="text-xs md:text-sm font-medium md:ml-4">
-              12 November 2021
+            {post.post_date}
             </h3>
           </div>
         </div>

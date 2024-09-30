@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 import SubscribeCard from "@/components/homepageComponents/subscribeCard/SubscribeCard";
+import { RecipeProvider } from "@/context/ReciepContext";
 import "@/style/globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -20,10 +21,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header/>
-        {children}
-        <SubscribeCard/>
-        <Footer/>
+        <RecipeProvider>
+          <Header/>
+          {children}
+          <SubscribeCard/>
+          <Footer/>
+        </RecipeProvider>
+       
       </body>
     </html>
   );

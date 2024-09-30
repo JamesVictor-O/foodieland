@@ -1,11 +1,14 @@
+"use client"
+
 import React from "react";
 import Time from "@/components/Time";
 import Image from "next/image";
+import { UseRecipes} from "@/context/ReciepContext";
 
 
 const FeaturedRecipe = () => {
+  // const { recipes} = UseRecipes()
   return (
-
     <>
       {/* for mobile */}
       <div className="bgImage h-screen hidden mt-24">
@@ -85,7 +88,7 @@ const FeaturedRecipe = () => {
       </div>
 
       {/* badge */}
-        <div className="hidden md:flex absolute w-[150px] h-[150px] right-[45%] top-10">
+      <div className="hidden md:flex absolute w-[150px] h-[150px] right-[45%] top-10">
           <Image src={"/homepage/Badge(1).png"} alt="badge" width={100} height={100}/>
       </div>
     </div>

@@ -1,4 +1,19 @@
-export const allRecipes= [
+
+
+export const getAllData = async () => {
+  try {
+    const response = await fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood");
+    const data= await response.json()
+    return data
+  } catch (error) {
+    console.log(error)
+  }
+ 
+}
+const allRecipe =getAllData().then(result => result).then(data => data.meals)
+console.log(allRecipe)
+
+export const allRecipes = [
     {
         description: "Mixed Tropical Fruit Salad with Superfood Boosts ",
         recipeUrl: "/recipe2/image1.png",
@@ -95,4 +110,39 @@ export const allRecipes= [
         type:"Noodles",
         id: "16",
       },
+]
+
+export const blogPosts = [
+  {
+    post_header:"Crochet Projects for Noodle Lovers",
+    post_body: "Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqut enim",
+    post_date: "12 November 2021",
+    post_author: "James Victor",
+    post_image:"homepage/Untitled design.jpg",
+    post_ID:1
+  },
+  {
+    post_header:"Crochet Projects for Noodle Lovers",
+    post_body: "Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqut enim",
+    post_date: "12 November 2021",
+    post_author: "James Victor",
+    post_image:"homepage/Untitled design.jpg",
+    post_ID:2
+  },
+  {
+    post_header:"Crochet Projects for Noodle Lovers",
+    post_body: "Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqut enim",
+    post_date: "12 November 2021",
+    post_author: "Adeyemi bolladi",
+    post_image:"homepage/Untitled design.jpg",
+    post_ID:3
+  },
+  {
+    post_header:"Crochet Projects for Noodle Lovers",
+    post_body: "Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqut enim",
+    post_date: "12 November 2021",
+    post_author: "John Boss",
+    post_image:"homepage/Untitled design.jpg",
+    post_ID:4
+  },
 ]
