@@ -11,7 +11,7 @@ export const getAllData = async () => {
  
 }
 const allRecipe =getAllData().then(result => result).then(data => data.meals)
-console.log(allRecipe)
+// console.log(allRecipe)
 
 export const allRecipes = [
     {

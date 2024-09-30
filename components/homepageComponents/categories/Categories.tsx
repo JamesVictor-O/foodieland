@@ -1,41 +1,12 @@
-"use client";
 
 import { useState } from "react";
 import ItemCategorie from "./itemCategorie";
 
-const Categories = () => {
-  const [categoriesClasses, setCategorieClasses] = useState([
-    {
-      name: "Breakfast",
-      imageUrl: "categories/image 25.png",
-      id: "1",
-    },
-    {
-      name: "Vagan",
-      imageUrl: "categories/image 20.png",
-      id: "2",
-    },
-    {
-      name: "Meat",
-      imageUrl: "categories/image 21.png",
-      id: "3",
-    },
-    {
-      name: "Dessert",
-      imageUrl: "categories/image 22.png",
-      id: "4",
-    },
-    {
-      name: "Lunch",
-      imageUrl: "categories/image 23.png",
-      id:"5"
-    },
-    {
-      name: "Chocolate",
-      imageUrl: "categories/image 24.png",
-      id:"6"
-    },
-  ]);
+const Categories = async () => {
+  const request = await fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
+  const response = await request.json()
+  const categoriesClasses= response.categories
+console.log(categoriesClasses)
 
   return (
     <main className="w-[100%] h-80 mt-6 lg:mt-9">
@@ -51,8 +22,8 @@ const Categories = () => {
       
       <div className="w-full overflow-x-auto no-scrollbar">
         <div className="flex flex-row md:grid lg:grid-cols-6 mt-6 md:mt-0 md:w-full w-[900px]">
-          {categoriesClasses.map(items => (
-            <ItemCategorie key={items.id } items={items} />
+          {categoriesClasses.slice(0,6).map((items:any) => (
+            <ItemCategorie key={items.idCategory} items={items} />
           ))}
         </div>
       </div>

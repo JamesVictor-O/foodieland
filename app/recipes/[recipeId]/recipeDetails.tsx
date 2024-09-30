@@ -9,7 +9,7 @@ import { allRecipes } from "@/data";
 import { useEffect, useState } from "react";
 
 const RecipeHome = () => {
-  const [meal, setMeal] = useState<any | null>(null);
+  const [mealDetails, setMealDetails] = useState<any>(null);
 
   const params = useParams();
   const { recipeId } = params;
@@ -19,10 +19,11 @@ const RecipeHome = () => {
     const mealDetails = async () => {
       try {
         const request = await fetch(
-          `www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`);
+          `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`
+        );
         const response = await request.json();
         if (response.meals && response.meals.length > 0) {
-          setMeal(response.meals[0]);
+          setMealDetails(response.meals[0]);
         } else {
           console.log("no meal found")
         }
@@ -35,16 +36,16 @@ const RecipeHome = () => {
     if (recipeId) {
       mealDetails();
     }
-
+    
   }, [recipeId]);
  
   // const recipe = allRecipes.find((recipe) => recipe.id === recipeId);
-  if (meal) {
-    console.log(meal);
+  if (mealDetails) {
+    console.log(mealDetails);
     return (
       <div className="w-[100%] ">
-        {/* <RecipeHeader description={recipe.description} /> */}
-        <VisualSection imageUrl={meal.strMealThumb} />
+        <RecipeHeader description={mealDetails.strMeal} />
+        <VisualSection imageUrl={mealDetails.strMealThumb} />
         <div className="absolute top-32 right-40 hidden md:block">
           <Printer />
         </div>

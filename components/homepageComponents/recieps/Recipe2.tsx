@@ -4,8 +4,8 @@ import ReciepsCard from "./ReciepsCard";
    
 
 const Recipe2 = async() => {
-
-  const response = await fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Vegetarian");
+   const name="Vegetarian"
+  const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${name}`);
   const data = await response.json()
     // const [recipes, setRecipes] = useState([
     //   {
