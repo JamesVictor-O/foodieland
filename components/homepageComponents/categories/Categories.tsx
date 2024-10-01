@@ -6,7 +6,6 @@ const Categories = async () => {
   const request = await fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
   const response = await request.json()
   const categoriesClasses= response.categories
-console.log(categoriesClasses)
 
   return (
     <main className="w-[100%] h-80 mt-6 lg:mt-9">

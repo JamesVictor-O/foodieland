@@ -1,10 +1,13 @@
+"use client";
 
 import ReciepsCard from '@/components/homepageComponents/recieps/ReciepsCard'
 import { allRecipes } from '@/data' 
-
+import { UseRecipes } from '@/context/ReciepContext';
 
 
 const AllRecipes = () => {
+  const { categories } = UseRecipes()
+  
   const style={
     cardWith: '100%',
     cardHight:"434px",

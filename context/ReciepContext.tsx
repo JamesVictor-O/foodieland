@@ -9,6 +9,10 @@ export const RecipeContext = createContext<any>(null)
 export const RecipeProvider = ({ children }: { children: React.ReactNode }) => {
     
     const [recipes, setRecipes] = useState<any[]>([])
+    const [categories, setCategories] = useState<{}>({
+        current_Categorie: "Breakfast",
+        next_Categorie:""
+    })
     const [data, setData] = useState<any[]>([])
     
     useEffect(() => {
@@ -31,7 +35,9 @@ export const RecipeProvider = ({ children }: { children: React.ReactNode }) => {
     },[])
     
     const value = {
-        recipes
+        recipes,
+        categories,
+        setCategories
     }
 
     return (
@@ -42,11 +48,3 @@ export const RecipeProvider = ({ children }: { children: React.ReactNode }) => {
 }
 
 export const UseRecipes = () => useContext(RecipeContext)
-
-// export const UseRecipes = () => {
-//     const context = useContext(RecipeContext);
-//     if (context === undefined) {
-//         throw new Error("useRecipes must be used within a RecipeProvider");
-//     }
-//     return context;
-// };
