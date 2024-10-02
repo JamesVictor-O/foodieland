@@ -10,7 +10,7 @@ export const RecipeProvider = ({ children }: { children: React.ReactNode }) => {
     
     const [recipes, setRecipes] = useState<any[]>([])
     const [categories, setCategories] = useState<{}>({
-        current_Categorie: "Breakfast",
+        current_Categorie: "Beef",
         next_Categorie:""
     })
     const [data, setData] = useState<any[]>([])
@@ -26,8 +26,7 @@ export const RecipeProvider = ({ children }: { children: React.ReactNode }) => {
                     console.log("error somewhere")
                 }
                 setData(result.meals)
-                // setRecipes(data);
-                
+                // setRecipes(data)
             } catch (error) {
                 console.log(error)
             }

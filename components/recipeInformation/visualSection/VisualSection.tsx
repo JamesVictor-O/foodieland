@@ -1,28 +1,34 @@
 import React from "react";
 import Image from "next/image";
 
-const VisualSection = ({ imageUrl }: { imageUrl: string }) => {
+const VisualSection = ({ mealDetails }: { mealDetails: [] }) => {
+  console.log(mealDetails);
+  const getVideoId = (details: any) => {
+    const url = details.strYoutube;
+    const videoId = url.split("v=")[1];
+    return videoId;
+  };
+
+  const videoID = getVideoId(mealDetails);
   return (
-    <main className="relative w-full flex flex-col">
+    <main className=" w-full flex flex-col">
       {/* visual properties */}
       <div className="relative w-full md:h-[500px] flex flex-row">
         {/* video section */}
         <div className="w-full md:w-[65%] h-full rounded-[10px] overflow-hidden">
-          <Image
-            src={imageUrl}
-            width={500}
-            height={500}
-            alt="food image"
-            className="w-full object-cover h-full rounded-xl"
+          <iframe
+            src={`https://www.youtube.com/embed/${videoID}`}
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+            }}
+            frameBorder="0"
+            allowFullScreen
+            title="YouTube Video"
           />
-
-          <div className="absolute w-14 h-14 md:w-28 md:h-28 bg-[#f9f3f3] rounded-full top-[35%] overflow-hidden left-[40%]  md:left-[28%] flex justify-center align-middle items-center">
-            <img
-              src="/assets/Polygon 1.svg"
-              alt="food image"
-              className=" w-5 h-5 md:w-10 object-center md:h-10"
-            />
-          </div>
         </div>
 
         {/* nutrition section */}

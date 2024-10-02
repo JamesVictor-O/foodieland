@@ -14,7 +14,7 @@ const Time = ({ mealType }:{ mealType:string}) => {
       <div className="flex flex-row items-center bg-[#f4f0f0] p-1 rounded-full md:w-[40%] h-[40px]  pl-2 md:ml-10">
         {/* <ForkKnife/> */}
         <img src="homepage/ForkKnife.svg" alt="timer" />
-        <span className="text-[10px] md:text-[14px] font-normal md:ml-2 pr-5">{mealType}</span>
+        <span className="text-[10px] md:text-[14px] font-normal md:ml-2 pr-5">{mealType.split(" ")[0]}</span>
       </div>
     </div>
   );
