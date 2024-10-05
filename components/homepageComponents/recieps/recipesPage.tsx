@@ -1,8 +1,6 @@
 "use client";
 
 import ReciepsCard from '@/components/homepageComponents/recieps/ReciepsCard'
-import { allRecipes } from '@/data' 
-import { UseRecipes } from '@/context/ReciepContext';
 import { useEffect, useState } from 'react';
 
 

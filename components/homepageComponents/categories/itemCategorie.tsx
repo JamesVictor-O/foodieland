@@ -22,7 +22,6 @@ const ItemCategorie = ({ items }: ItemsProps) => {
     }));
   }
   const isCurrentcategory = items.strCategory === categories.current_Categorie;
-  console.log(isCurrentcategory)
   return (
     <div
       onClick={e=> HandleClick(items.strCategory)}

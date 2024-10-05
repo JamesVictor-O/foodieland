@@ -12,7 +12,7 @@ const Direction = ({direction}:{direction:string}) => {
       <div>
         {/* directive */}
         {steps.map((step,index) => (
-          <div className="flex flex-row items-baseline border-b-2 py-4 px-2 md:px-0">
+          <div key={index} className="flex flex-row items-baseline border-b-2 py-4 px-2 md:px-0">
           <div className="ml-4">
             <p className="w-full text-left text-sm">
               {step}

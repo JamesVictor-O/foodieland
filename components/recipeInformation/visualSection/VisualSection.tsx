@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import YouTube from "react-youtube";
 
 const VisualSection = ({ mealDetails }: { mealDetails: [] }) => {
   console.log(mealDetails);
@@ -10,13 +11,20 @@ const VisualSection = ({ mealDetails }: { mealDetails: [] }) => {
   };
 
   const videoID = getVideoId(mealDetails);
+  const opts = {
+    height: '390',
+    width: '640',
+    playerVars: {
+      autoplay: 0,
+    },
+  };
   return (
     <main className=" w-full flex flex-col">
       {/* visual properties */}
       <div className="relative w-full md:h-[500px] flex flex-row">
         {/* video section */}
-        <div className="w-full md:w-[65%] h-full rounded-[10px] overflow-hidden">
-          <iframe
+        <div className="relative w-full md:w-[65%] rounded-[10px] overflow-hidden">
+          {/* <iframe
             src={`https://www.youtube.com/embed/${videoID}`}
             style={{
               position: "absolute",
@@ -25,10 +33,11 @@ const VisualSection = ({ mealDetails }: { mealDetails: [] }) => {
               width: "100%",
               height: "100%",
             }}
-            frameBorder="0"
             allowFullScreen
             title="YouTube Video"
-          />
+          /> */}
+
+          <YouTube videoId={videoID} opts={ opts} />
         </div>
 
         {/* nutrition section */}
