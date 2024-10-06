@@ -69,7 +69,7 @@ const RecipeHome = () => {
   }
   return (
     <div className="w-[100%] mt-20 md:mt-28 flex justify-center align-middle ">
-      <Rings color="#36D7B7" size={60} />
+      <Rings/>
     </div>
   );
 };

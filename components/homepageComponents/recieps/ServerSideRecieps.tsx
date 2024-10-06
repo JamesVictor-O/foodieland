@@ -60,7 +60,7 @@ const ServerSideRecieps = ({ categories }: CategoriesProps) => {
       {/* display loading */}
       {loading && (
         <div className='w-full flex flex-col justify-center items-center'>
-          <Rings size={70} />
+          <Rings/>
           <h2>Loading...</h2>
         </div>
       )
