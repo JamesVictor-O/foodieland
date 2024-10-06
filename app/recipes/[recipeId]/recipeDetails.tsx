@@ -93,7 +93,7 @@ const RecipeHome = () => {
       return details;
     }
 
-    const headerDetails= getHeaderDetails(mealDetails)
+    const headerDetails: any[]= getHeaderDetails(mealDetails)
 
     return (
   
