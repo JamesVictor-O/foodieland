@@ -23,7 +23,6 @@ const ServerSideRecieps = ({ categories }: CategoriesProps) => {
     const fetchData = async () => {
       try {
         setLoading(true); 
-        setError(false);
         const url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${categories.current_Categorie}`;
         const request = await fetch(url);
         if (!request.ok) {
