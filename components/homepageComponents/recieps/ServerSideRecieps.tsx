@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import ReciepsCard from './ReciepsCard';
 import { Rings } from "react-loader-spinner";
+import { useInView } from 'react-intersection-observer';
 
 interface CategoriesProps {
   categories: {
@@ -16,7 +17,8 @@ const ServerSideRecieps = ({ categories }: CategoriesProps) => {
   // const data = await response.json()
   const [data, setData] = useState<any[]>([]);
   const [error, setError] = useState<string | null>(null);
-  const [loading,setLoading]=useState<boolean>(true)
+  const [loading, setLoading] = useState<boolean>(true)
+  const { ref, inView } = useInView({ triggerOnce: true });
 
   useEffect(() => {
 
@@ -42,9 +44,11 @@ const ServerSideRecieps = ({ categories }: CategoriesProps) => {
       
       }
 
-    fetchData()
+    if (inView) {
+      fetchData()
+    }
 
-  }, [categories]);
+  }, [categories,inView]);
   // styling properties
   const style = {
     cardWith: "100%",
@@ -56,7 +60,7 @@ const ServerSideRecieps = ({ categories }: CategoriesProps) => {
     background: "#e3eff5",
   };
   return (
-    <div className="w-[100%] h-full mt-30 md:mt-20">
+    <div  ref={ref} className="w-[100%] h-full mt-30 md:mt-20">
       <div className="w-full flex justify-between items-center flex-col ">
         <h2 className="font-semibold text-2xl  md:text-4xl  h-14">
           Simple and tasty recipes
