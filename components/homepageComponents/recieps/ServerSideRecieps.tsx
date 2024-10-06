@@ -15,23 +15,36 @@ const ServerSideRecieps = ({ categories }: CategoriesProps) => {
   // const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${categories.current_Categorie}`);
   // const data = await response.json()
   const [data, setData] = useState<any[]>([]);
-  const [error, setError] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
   const [loading,setLoading]=useState<boolean>(true)
 
   useEffect(() => {
-    try {
-      const url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${categories.current_Categorie}`;
-      const fetchData = async () => {
+
+    const fetchData = async () => {
+      try {
+        setLoading(true); 
+        setError(false);
+        const url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${categories.current_Categorie}`;
         const request = await fetch(url);
+        if (!request.ok) {
+          throw new Error("Network response was not ok")
+        }
         const response = await request.json();
-        setData(response.meals);
-      };
-      fetchData();
-    } catch (err) {
-      setError(true);
-    } finally {
-      setLoading(false)
-    }
+        if (response.meals) {
+          setData(response.meals)
+        } else {
+          throw new Error("no meal available")
+        }
+      } catch (err: any) {
+        setError(err.message || "An unknown error occurred")
+      } finally {
+        setLoading(false)
+      }
+      
+      }
+
+    fetchData()
+
   }, [categories]);
   // styling properties
   const style = {
@@ -69,8 +82,8 @@ const ServerSideRecieps = ({ categories }: CategoriesProps) => {
       {/* display error */}
       {
         error && (
-        <div className="w-full text-center bg-blue-700  text-red-600 text-2xl">
-          Oops! Something went wrong. Please try again later.
+        <div className="w-full text-center my-14   text-red-600 text-2xl">
+            Oops! Something went wrong. Please refresh again or check your internet Connectivity.{ error}
         </div>
         )
       }
@@ -79,7 +92,7 @@ const ServerSideRecieps = ({ categories }: CategoriesProps) => {
 
       {
         !error && !loading && (
-          <div className="w-[100%] grid grid-cols-2 md:grid-cols-3 md:gap-10 justify-center mt-8 md:mt-20">
+          <div className="w-[100%] grid grid-cols-2 md:grid-cols-4 md:gap-10 justify-center mt-8 md:mt-20">
           {data.map((meal: any) => (
             <ReciepsCard key={meal.idMeal} meal={meal} style={style} />
           ))}

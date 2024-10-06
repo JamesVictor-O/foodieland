@@ -1,11 +1,11 @@
 import React from "react";
 import Image from "next/image";
 
-const RecipeHeader = ({ mealDetails}:{ mealDetails:[]}) => {
+const RecipeHeader = ({ headerDetails}:{ headerDetails:[string,string]}) => {
   return (
     <div className="w-full md:w-[70%] mb-4 md:h-44 md:mb-0 mt-24">
       <h2 className="w-full h-10 md:h-20 font-bold md:font-semibold text-lg sm:text-2xl lg:text-4xl mb-6 md:mb-3">
-        {mealDetails.strMeal}
+        {headerDetails[0]}
       </h2>
       <div className="w-full md:w-[100%] h-12 flex flex-row items-center">
         {/* sections */}
@@ -48,7 +48,7 @@ const RecipeHeader = ({ mealDetails}:{ mealDetails:[]}) => {
           </div>
           
           <div className="  ml-2">
-            <h3 className="  text-[10px] md:text-sm">{mealDetails.strCategory }</h3>
+            <h3 className="  text-[10px] md:text-sm">{headerDetails[1]}</h3>
           </div>
         </div>
       </div>

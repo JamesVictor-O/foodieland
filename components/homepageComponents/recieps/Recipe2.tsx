@@ -81,7 +81,7 @@ const Recipe2 = async() => {
           </div>
           
           {/* recipe card */}
-       <div className="w-[100%] grid gap-2 grid-cols-2 md:grid-cols-4 md:gap-5 justify-center mt-8 md:mt-20">
+       <div className="w-[100%] grid gap-2 grid-cols-2 md:grid-cols-5 md:gap-5 justify-center mt-8 md:mt-20">
         {data.meals.map((meal:any) => (
             <ReciepsCard  key={meal.idMeal} meal={meal} style={style } />
          ))}

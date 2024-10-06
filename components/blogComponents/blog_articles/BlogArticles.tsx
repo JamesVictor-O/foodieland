@@ -11,7 +11,8 @@ interface postProps{
   }
 }
 
-const BlogArticles = ({post}:postProps) => {
+const BlogArticles = ({ post }: postProps) => {
+  const apikey="15085d4e0ce64e5d924b9e79b4285465"
   return (
     <div className="w-full h-40 md:h-52 flex flex-row p-2  border border-gray-300 rounded-3xl mb-4">
       <div className="overflow-hidden rounded-xl w-[70%]  md:w-72 h-32 md:h-48 ">
