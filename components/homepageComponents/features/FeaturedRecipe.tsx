@@ -3,7 +3,7 @@
 import React from "react";
 import Time from "@/components/Time";
 import Image from "next/image";
-import { UseRecipes} from "@/context/ReciepContext";
+import Link from "next/link";
 
 
 const FeaturedRecipe = () => {
@@ -77,10 +77,10 @@ const FeaturedRecipe = () => {
           </div>
 
           {/* play */}
-          <div className="w-[163px] bg-black h-[50px] rounded-[15px] flex justify-center items-center flex-row  ">
+            <Link href={'/recipes'} className="w-[163px] bg-black h-[50px] rounded-[15px] flex justify-center items-center flex-row  ">
             <span className="text-white text-[12px]">View Recipes</span>
             <img src="homepage/PlayCircle.svg" alt="play" className="ml-2"/>
-          </div>
+          </Link>
         </div>
       </div>
         <div className=" h-full md:w-[50%] ">

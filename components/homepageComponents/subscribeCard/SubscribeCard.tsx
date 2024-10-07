@@ -14,7 +14,8 @@ const SubscribeCard = () => {
           tempor incididunt ut labore et dolore magna aliqut enim ad minim{" "}
         </p>
         <div className="w-[80%] md:w-[60%] h-[50px] rounded-[24px] bg-white mt-10 flex flex-row items-center overflow-hidden">
-            <input type="email" placeholder="your email address" className="h-full w-[90%] pl-4 outline-none font-light font-sans" />   
+            <input type="email" placeholder="your email address" className="h-full w-[90%] pl-4 outline-none font-light font-sans" /> 
+            {/* <input type="email" placeholder="your email address" className="h-full outline-none border w-[90%] pl-4 rounded-[24px]"/> */}
             <button className="bg-black w-[28%] text-white h-[40px] text-xs rounded-[16px] ">Subscribe</button>      
         </div>
       </div>

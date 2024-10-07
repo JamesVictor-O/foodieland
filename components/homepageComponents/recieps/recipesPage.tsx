@@ -28,7 +28,7 @@ const AllRecipes = () => {
     
 }
   return (
-    <div className='bg-[#E7F9FD] mx-5 grid-cols-2 grid md:grid-cols-3 pt-20  md:pt-40'>
+    <div className='bg-[#E7F9FD] mx-5 grid-cols-2 grid md:grid-cols-4 pt-20  md:pt-40'>
        {meals.map((meal:any) => (
             <ReciepsCard  key={meal.idMeal}  meal={meal} style={style} />
       ))}
