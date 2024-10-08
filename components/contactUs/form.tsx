@@ -31,7 +31,7 @@ const ContactForm = () => {
   }
   const HandleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    fetch('/submit-form', {
+    fetch('api/formSubmition', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -1,22 +1,17 @@
-"use client";
+import ReciepsCard from '@/components/homepageComponents/recieps/ReciepsCard';
 
-import ReciepsCard from '@/components/homepageComponents/recieps/ReciepsCard'
-import { useEffect, useState } from 'react';
+async function getData() {
+  const url="https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood"
+  const request = await fetch(url,{ cache: 'force-cache' });
+  if (!request) {
+    throw new Error("fail to fetch data")
+  };
+  return request.json()
 
 
-const AllRecipes = () => {
-
-  const [meals, setMeals] = useState<any[]>([])
-  useEffect(() => {
-    const url="https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood"
-    const getAllMeals = async() => {
-      const request = await fetch(url)
-      const response = await request.json();
-      setMeals(response.meals)
-    }
-
-    getAllMeals()
-  },[])
+}
+const AllRecipes =async () => {
+  const meal = await getData();
   const style={
     cardWith: '100%',
     cardHight:"434px",
@@ -29,11 +24,10 @@ const AllRecipes = () => {
 }
   return (
     <div className='bg-[#E7F9FD] mx-5 grid-cols-2 grid md:grid-cols-4 pt-20  md:pt-40'>
-       {meals.map((meal:any) => (
+       {meal.meals.map((meal:any) => (
             <ReciepsCard  key={meal.idMeal}  meal={meal} style={style} />
       ))}
     </div>
   )
 }
-
 export default AllRecipes

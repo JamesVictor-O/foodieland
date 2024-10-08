@@ -22,7 +22,7 @@ interface RecipesProps{
 }
    
 }
-const ReciepsCard = ({ meal, style }: RecipesProps) => {
+const ReciepsCard:React.FC<RecipesProps> = ({ meal, style }) => {
   const router=useRouter()
   const handleClick = () => {
      router.push(`/recipes/${meal.idMeal}`)
