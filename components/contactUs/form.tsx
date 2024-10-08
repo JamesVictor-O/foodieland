@@ -31,18 +31,27 @@ const ContactForm = () => {
   }
   const HandleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    fetch('api/formSubmition', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData)
-    })
-      .then(response => response.json())
-      .then(data => console.log('Success:', data))
-      .catch(error => console.error('Error:', error));
+     submitData()
     setFormData(initialForm)
-   }
+  }
+  
+  const submitData = async () => {
+    try {
+      const response= await fetch('api/form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      });
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data.message);
+       }
+    } catch (error) {
+      console.log("Error submitting form")
+    }
+  }
   return (
     <div className="w-full h-full">
       <form onSubmit={HandleSubmit}>
