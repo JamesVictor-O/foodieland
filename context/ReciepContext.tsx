@@ -13,6 +13,7 @@ export const RecipeProvider = ({ children }: { children: React.ReactNode }) => {
         current_Categorie: "Beef",
         next_Categorie:""
     })
+    
     const [data, setData] = useState<any[]>([])
     
     useEffect(() => {
@@ -36,7 +37,7 @@ export const RecipeProvider = ({ children }: { children: React.ReactNode }) => {
     const value = {
         recipes,
         categories,
-        setCategories
+        setCategories,
     }
 
     return (

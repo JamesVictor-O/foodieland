@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import YouTube from "react-youtube";
-
+import { Suspense } from "react";
+import { Rings } from "react-loader-spinner";
 const VisualSection = ({ mealDetails }: { mealDetails: [] }) => {
-  console.log(mealDetails);
   const getVideoId = (details: any) => {
     const url = details.strYoutube;
     const videoId = url.split("v=")[1];
@@ -12,8 +12,8 @@ const VisualSection = ({ mealDetails }: { mealDetails: [] }) => {
 
   const videoID = getVideoId(mealDetails);
   const opts = {
-    height: '390',
-    width: '640',
+    height: "390",
+    width: "640",
     playerVars: {
       autoplay: 0,
     },
@@ -23,22 +23,11 @@ const VisualSection = ({ mealDetails }: { mealDetails: [] }) => {
       {/* visual properties */}
       <div className="relative w-full md:h-[500px] flex flex-row">
         {/* video section */}
-        <div className="relative w-full md:w-[65%] rounded-[10px] overflow-hidden">
-          {/* <iframe
-            src={`https://www.youtube.com/embed/${videoID}`}
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-            }}
-            allowFullScreen
-            title="YouTube Video"
-          /> */}
-
-          <YouTube videoId={videoID} opts={ opts} />
-        </div>
+        <Suspense fallback={<Rings/>}>
+          <div className="relative w-full md:w-[65%] rounded-[10px] overflow-hidden">
+            <YouTube videoId={videoID} opts={opts} />
+          </div>
+        </Suspense>
 
         {/* nutrition section */}
         <div className="hidden md:block w-[30%] h-full rounded-3xl bg-[#E7FAFE] ml-12 p-8">

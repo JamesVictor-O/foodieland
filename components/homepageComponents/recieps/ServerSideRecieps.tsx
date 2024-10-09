@@ -21,7 +21,6 @@ const ServerSideRecieps = ({ categories }: CategoriesProps) => {
   const { ref, inView } = useInView({ triggerOnce: true });
 
   useEffect(() => {
-
     const fetchData = async () => {
       try {
         setLoading(true); 
@@ -31,6 +30,7 @@ const ServerSideRecieps = ({ categories }: CategoriesProps) => {
           throw new Error("Network response was not ok")
         }
         const response = await request.json();
+        
         if (response.meals) {
           setData(response.meals)
         } else {

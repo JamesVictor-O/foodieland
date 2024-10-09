@@ -1,33 +1,75 @@
+"use client"
+
+
+
 import ReciepsCard from '@/components/homepageComponents/recieps/ReciepsCard';
+import RecipesSearchBar from "./RecipesSearchBar";
+import { useState, useEffect } from 'react';
+import { Suspense } from 'react';
+import { Rings } from 'react-loader-spinner';
+import { useInView } from 'react-intersection-observer';
+import { getData } from "@/data";
 
-async function getData() {
-  const url="https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood"
-  const request = await fetch(url,{ cache: 'force-cache' });
-  if (!request) {
-    throw new Error("fail to fetch data")
-  };
-  return request.json()
+const AllRecipes =  () => {
+  const { ref, inView } = useInView({ triggerOnce: false });
+  const [isCurrentCategorie, setIsCurrentCategorie] = useState<string>("side")
+  const [meals,setMeals]=useState<any[]>([])
+  useEffect(() => {
+    const mealCategories = async () => {
+        try {
+            const request = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${isCurrentCategorie}`);
+            const response = await request.json()
+            if (!request.ok) {
+                throw new Error("Network response was not ok")
+              }
+            const data = response.meals;
 
+            if (response.meals) {
+              setMeals(data)
+              console.log(data)
+            } else {
+                alert("error")
+                throw new Error("no categories available")
+              }
+          
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
-}
-const AllRecipes =async () => {
-  const meal = await getData();
-  const style={
-    cardWith: '100%',
-    cardHight:"434px",
+    if (inView) {
+        mealCategories()
+    }
+        
+
+},[inView,isCurrentCategorie])
+  
+
+  const style = {
+    cardWith: "100%",
+    cardHight: "434px",
     h2Width: "21%",
     imgHight: "250px",
     imaWidth: "360px",
-    text:"24px",
-    background:"#e3eff5"
-    
-}
+    text: "24px",
+    background: "#e3eff5",
+  };
   return (
-    <div className='bg-[#E7F9FD] mx-5 grid-cols-2 grid md:grid-cols-4 pt-20  md:pt-40'>
-       {meal.meals.map((meal:any) => (
-            <ReciepsCard  key={meal.idMeal}  meal={meal} style={style} />
-      ))}
+    <div className="bg-[#cedbde] " ref={ref}>
+      <div className="  w-full md:flex  justify-center align-middle  md:py-9">
+        <RecipesSearchBar setIsCurrentCategorie={setIsCurrentCategorie} />
+      </div>
+      <Suspense fallback={<Rings/>}>
+         <div className="grid-cols-2 grid md:grid-cols-4 pt-10  md:pt-0 mx-5">
+          {meals.map((meal: any) => (
+            <div key={meal.idMeal} className="">
+              <ReciepsCard meal={meal} style={style} />
+            </div>
+          ))}
+        </div>
+      </Suspense>
+        
     </div>
-  )
-}
+  );
+};
 export default AllRecipes

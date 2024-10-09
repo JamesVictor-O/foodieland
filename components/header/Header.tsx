@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <main className="header_main ">
       {/* mobile */}
-      <div className=" flex md:hidden flex-row items-center justify-between w-full  p-5">
+      <div className=" flex md:hidden flex-row items-center justify-between w-full p-4 ">
         {/* logo */}
         <div className="">
           <Image
