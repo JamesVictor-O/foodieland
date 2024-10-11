@@ -17,7 +17,7 @@ const MobileMenu = ({setIsOpen}: MobileProps) => {
       <Link href={'/recipes'} onClick={handleModelClosing} className="text-base font-normal bg-[#c0e2ee] p-2 rounded-lg w-24 text-center mb-2">Recipes</Link>
       <Link href={"/blogs"} onClick={handleModelClosing} className="text-base font-normal bg-[#c0e2ee] p-2 rounded-lg w-24 text-center mb-2">Blog</Link>
       <Link  href={"/contact"} onClick={handleModelClosing} className="text-base font-normal bg-[#c0e2ee] p-2 rounded-lg w-24 text-center mb-2">Contact</Link>
-      <Link href={'/'} onClick={handleModelClosing} className="text-base font-normal bg-[#c0e2ee] p-2 rounded-lg w-24 text-center mb-2">About</Link>
+      <Link href={'/about'} onClick={handleModelClosing} className="text-base font-normal bg-[#c0e2ee] p-2 rounded-lg w-24 text-center mb-2">About</Link>
      </div>
 
       {/* socials icon */}

@@ -25,7 +25,7 @@ const ServerSideRecieps = ({ categories }: CategoriesProps) => {
       try {
         setLoading(true); 
         const url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${categories.current_Categorie}`;
-        const request = await fetch(url);
+        const request = await fetch(url,{ next: { revalidate: 60 }});
         if (!request.ok) {
           throw new Error("Network response was not ok")
         }

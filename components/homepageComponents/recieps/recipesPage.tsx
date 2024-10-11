@@ -17,7 +17,7 @@ const AllRecipes =  () => {
   useEffect(() => {
     const mealCategories = async () => {
         try {
-            const request = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${isCurrentCategorie}`);
+            const request = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${isCurrentCategorie}`,{ next: { revalidate: 60 }});
             const response = await request.json()
             if (!request.ok) {
                 throw new Error("Network response was not ok")

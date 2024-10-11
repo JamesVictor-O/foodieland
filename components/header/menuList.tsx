@@ -8,7 +8,7 @@ const MenuList = () => {
       <Link href={'/recipes'} className="text-xl font-medium mr-4 hover:border-b-2 border-black p-1">Recipes</Link>
       <Link href={"/blogs"} className="text-xl font-medium mr-4 hover:border-b-2 border-black p-1">Blog</Link>
       <Link  href={"/contact"} className="text-xl font-medium mr-4 hover:border-b-2 border-black p-1">Contact</Link>
-      <Link href={'/'} className="text-xl font-medium mr-4 hover:border-b-2 border-black p-1">About</Link>
+      <Link href={'/about'} className="text-xl font-medium mr-4 hover:border-b-2 border-black p-1">About</Link>
      
     </>
   );

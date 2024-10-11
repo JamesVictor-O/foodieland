@@ -1,6 +1,8 @@
 "use client"
 
+import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { json } from "stream/consumers";
 
 interface formDataProps{
@@ -19,6 +21,7 @@ const ContactForm = () => {
     message:""
   }
   const [formData, setFormData] = useState<formDataProps>(initialForm)
+  const router=useRouter()
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -29,10 +32,19 @@ const ContactForm = () => {
 
     
   }
+  
   const HandleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-     submitData()
+    for (let key in formData) {
+      if (!formData[key]) {
+        alert("Please fill out all fields");
+        return;
+      }
+    }
+    router.push("/contact/thankyou")
+    submitData()
     setFormData(initialForm)
+   
   }
   
   const submitData = async () => {
@@ -72,6 +84,7 @@ const ContactForm = () => {
           <div className="w-full md:w-[85%] h-24">
             <label className="text-xs font-medium">Subject</label>
             <input
+              required
               value={formData.subject_Matter}
               onChange={handleChange}
               name="subject_Matter"
@@ -94,7 +107,7 @@ const ContactForm = () => {
           </div>
           <div className="w-full md:w-[85%] h-24">
             <label className="text-xs font-medium">ENQUIRY TYPE</label>
-            <select className="w-full outline-none border border-[#4a4848] p-2 rounded-xl mt-2">
+            <select required className="w-full outline-none border border-[#4a4848] p-2 rounded-xl mt-2">
               <option value="Advertising">Advertising</option>
             </select>
           </div>

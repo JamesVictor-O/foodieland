@@ -13,12 +13,3 @@ const nextConfig = {
 };
 
 export default nextConfig;
-
-
-// const nextConfig = {
-//     images: {
-//       domains: ['www.themealdb.com'], // Add the hostname here
-//     },
-//   };
-  
-//   module.exports = nextConfig;
