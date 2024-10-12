@@ -1,4 +1,4 @@
-import React from "react";
+import Image from "next/image";
 
 const PostPageHeader = () => {
   return (
@@ -9,11 +9,8 @@ const PostPageHeader = () => {
       <div className="mt-2  md:mt-7 flex flex-row items-center">
         <div className="w-36 h-8 md:h-10 flex flex-row items-center">
           <div className="w-10 h-10 overflow-hidden rounded-full">
-            <img
-              src="/homepage/Untitled design.jpg"
-              alt=""
-              className="w-full h-full object-cover"
-            />
+            <Image  src="/homepage/Untitled design.jpg" alt="" className="w-full h-full object-cover"/>
+           
           </div>
           <h3 className="text-xs md:text-sm font-bold ml-2">James Victor</h3>
         </div>

@@ -45,7 +45,7 @@ const ReciepsCard:React.FC<RecipesProps> = ({ meal, style }) => {
             <Image src={meal.strMealThumb} alt='recipe image'width={500} height={500} className='object-contain w-full h-full' />
 
             <div className=' absolute top-4 right-4 w-[30px] bg-white rounded-full'>
-              <img src="recipes/Vector.png" alt=" heart"  className='w-[20px] p-3 '/>         
+              <Image src="recipes/Vector.png" alt=" heart"  className='w-[20px] p-3 '/>         
             </div>
 
       </div>

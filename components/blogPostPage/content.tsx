@@ -1,15 +1,12 @@
-
+import Image from "next/image";
 
 const Content = () => {
   return (
     <div className="mt-4 w-full">
       {/* image  */}
       <div className="w-full h-52 md:h-[600px] overflow-hidden rounded-xl">
-        <img
-          src="/assets/image 29.png"
-          alt=""
-          className="w-full h-full md:object-cover"
-        />
+        <Image  src="/assets/image 29.png" width={100}  height={50} alt=""  className="w-full h-full md:object-cover"/>
+       
       </div>
 
       {/* articles */}
@@ -49,11 +46,7 @@ const Content = () => {
               Do you cook at home on your days off?
             </h2>
             <div className="w-full h-52 md:h-[400px] overflow-hidden my-8 rounded-lg">
-              <img
-                src="/assets/Rectangle 23.png"
-                alt="image of food"
-                className="w-full h-full object-cover"
-              />
+              <Image src="/assets/Rectangle 23.png"  alt="image of food" width={100} height={50} className="w-full h-full object-cover"/>
             </div>
             <p className="text-left font-normal text-sm md:text-base mt-5">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
@@ -109,13 +102,14 @@ const Content = () => {
           <div className="mt-6">
             <div className="flex flex-col items-center">
               <div className="mb-3">
-                <img src="/assets/001-facebook.svg" alt="facebook logo" />
+                <Image  src="/assets/001-facebook.svg" width={100} height={50} alt="facebook logo"/>
+               
               </div>
               <div className="mb-4">
-                <img src="/assets/003-twitter.svg" alt="twitter logo" />
+              <Image  src="/assets/003-twitter.svg" width={100} height={50}  alt="twitter logo"/>
               </div>
               <div className="">
-                <img src="/assets/004-instagram.svg" alt="instagram logo" />
+              <Image  src="/assets/004-instagram.svg" width={100} height={50}  alt="instagram logo"/>
               </div>
             </div>
           </div>

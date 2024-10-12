@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import MenuList from "../header/menuList";
+import Image from "next/image";
 interface MobileProps{
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
@@ -24,13 +25,13 @@ const MobileMenu = ({setIsOpen}: MobileProps) => {
 
       <div className="flex flex-row items-center">
         <div className="mr-3">
-          <img src="/assets/001-facebook.svg" alt="facebook logo" />
+          <Image src="/assets/001-facebook.svg" alt="facebook logo" />
         </div>
         <div className="mr-6">
-          <img src="/assets/003-twitter.svg" alt="twitter logo" />
+          <Image src="/assets/003-twitter.svg" alt="twitter logo" />
         </div>
         <div>
-          <img src="/assets/004-instagram.svg" alt="instagram logo" />
+          <Image src="/assets/004-instagram.svg" alt="instagram logo" />
         </div>
       </div>
     </div>

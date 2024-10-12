@@ -31,8 +31,8 @@ const Header = () => {
         
         <div onClick={handleMenuOpen} className="w-8 h-8">
           {!isOpen ?
-            <img src="/assets/icons8-hamburger-menu.svg" alt="humbugerIcon" className="w-ful h-full object-contain" /> :
-            <img src="/assets/icons8-close.svg" alt="humbugerIcon" className="w-ful h-full object-contain" />
+            <Image  width={100} height={50} src="/assets/icons8-hamburger-menu.svg" alt="humbugerIcon" className="w-ful h-full object-contain"/> :
+            <Image src="/assets/icons8-close.svg" width={100} height={50} alt="humbugerIcon" className="w-ful h-full object-contain" />
         }
           
         </div>
@@ -64,13 +64,13 @@ const Header = () => {
 
         <div className="flex flex-row items-center">
           <div className="mr-3">
-            <img src="/assets/001-facebook.svg" alt="facebook logo" />
+            <Image width={100} height={50} src="/assets/001-facebook.svg" alt="facebook logo" />
           </div>
           <div className="mr-6">
-            <img src="/assets/003-twitter.svg" alt="twitter logo" />
+            <Image width={100} height={50} src="/assets/003-twitter.svg" alt="twitter logo" />
           </div>
           <div>
-            <img src="/assets/004-instagram.svg" alt="instagram logo" />
+            <Image width={100} height={50} src="/assets/004-instagram.svg" alt="instagram logo" />
           </div>
         </div>
       </div>

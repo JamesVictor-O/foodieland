@@ -53,7 +53,7 @@ const FeaturedRecipe = () => {
       <div className=" md:w-[50%] h-full p-4 lg:p-9">
         {/* hot spices */}
         <div className=" p-1 w-[40%] lg:w-[25%] h-11 flex flex-row bg-white items-center justify-center rounded-full">
-          <img src="homepage/hotRecipe.svg" alt="Hot Recipe" />
+          <Image src="homepage/hotRecipe.svg" alt="Hot Recipe" />
           <span className="ml-1 md:ml-4 font-medium font-serif">Hot recipe</span>
         </div>
 
@@ -69,7 +69,7 @@ const FeaturedRecipe = () => {
         <div className="flex flex-row  items-center mt-8 justify-between">
           {/* profile */}
           <div className="w-[163px] h-[50px] flex flex-row items-center ">
-            <img src="homepage/Untitled design.jpg" alt="" className="object-cover w-[50px] h-[50px] rounded-full" />
+            <Image src="homepage/Untitled design.jpg" alt="" className="object-cover w-[50px] h-[50px] rounded-full" />
             <div className="ml-4">
               <h2 className="text-[12px] font-bold">James Victor</h2>
               <span className="text-[10px]">15 March 2022</span>
@@ -79,7 +79,7 @@ const FeaturedRecipe = () => {
           {/* play */}
             <Link href={'/recipes'} className="w-[163px] bg-black h-[50px] rounded-[15px] flex justify-center items-center flex-row  ">
             <span className="text-white text-[12px]">View Recipes</span>
-            <img src="homepage/PlayCircle.svg" alt="play" className="ml-2"/>
+            <Image src="homepage/PlayCircle.svg" alt="play" className="ml-2"/>
           </Link>
         </div>
       </div>
