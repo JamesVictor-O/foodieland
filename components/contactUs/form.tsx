@@ -36,7 +36,7 @@ const ContactForm = () => {
   const HandleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     for (let key in formData) {
-      if (!formData[key]) {
+      if (!formData[key as keyof formDataProps]) {
         alert("Please fill out all fields");
         return;
       }
