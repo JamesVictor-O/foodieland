@@ -70,8 +70,8 @@ const RecipesSearchBar = ({ setIsCurrentCategorie }: RecipesSearchBarProps) => {
             Select a category
           </option>
           {finalCategories.map((cat, index) => (
-            <option key={index} value={cat}>
-              {cat}
+            <option key={index} value={cat.strCategory}>
+              {cat.strCategory}
             </option>
           ))}
         </select>
