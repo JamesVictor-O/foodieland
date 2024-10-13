@@ -44,6 +44,8 @@ interface MealDetailsProps {
 }
 const RecipeHome = () => {
   const [mealDetails, setMealDetails] = useState<MealDetailsProps | any>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string|null>(null);
 
   const params = useParams();
   const { recipeId } = params;
@@ -58,11 +60,13 @@ const RecipeHome = () => {
         const response = await request.json();
         if (response.meals && response.meals.length > 0) {
           setMealDetails(response.meals[0]);
+          setIsLoading(false);
         } else {
           console.log("no meal found");
         }
-      } catch (error) {
-        console.log(error);
+      } catch (error: any) {
+        setIsLoading(false);
+        setError(error.message || "An unknown error occurred");
       }
     };
 
@@ -72,6 +76,13 @@ const RecipeHome = () => {
     }
   }, [recipeId]);
 
+  if (isLoading) {
+    return (
+      <div className="w-[100%] mt-20 md:mt-28 flex justify-center align-middle ">
+        <Rings />
+      </div>
+    );
+  }
   if (mealDetails) {
     // filtering the ingredients
     const getAllIngredient = (meal: any) => {
@@ -87,16 +98,15 @@ const RecipeHome = () => {
     const fetchedIngredients = getAllIngredient(mealDetails);
 
     // extract header details
-    const getHeaderDetails = (meal:any) => {
-      const { strCategory, strMeal } = meal
+    const getHeaderDetails = (meal: any) => {
+      const { strCategory, strMeal } = meal;
       const details = [strCategory, strMeal];
       return details;
-    }
+    };
 
-    const headerDetails: any[]= getHeaderDetails(mealDetails)
+    const headerDetails: any[] = getHeaderDetails(mealDetails);
 
     return (
-  
       <div className="w-[100%] ">
         <RecipeHeader headerDetails={headerDetails} />
         <VisualSection mealDetails={mealDetails} />
@@ -108,9 +118,10 @@ const RecipeHome = () => {
       </div>
     );
   }
+  
   return (
     <div className="w-[100%] mt-20 md:mt-28 flex justify-center align-middle ">
-      <Rings />
+        Oops! Something went wrong. Please refresh again or check your internet Connectivity.{ error}
     </div>
   );
 };

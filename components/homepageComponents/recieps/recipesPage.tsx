@@ -9,15 +9,18 @@ import { Suspense } from 'react';
 import { Rings } from 'react-loader-spinner';
 import { useInView } from 'react-intersection-observer';
 import { getData } from "@/data";
+import { UseRecipes } from '@/context/ReciepContext';
 
-const AllRecipes =  () => {
+const AllRecipes = () => {
+  const {search}=UseRecipes()
   const { ref, inView } = useInView({ triggerOnce: false });
+  
   const [isCurrentCategorie, setIsCurrentCategorie] = useState<string>("side")
   const [meals,setMeals]=useState<any[]>([])
   useEffect(() => {
     const mealCategories = async () => {
         try {
-            const request = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${isCurrentCategorie}`,{ next: { revalidate: 60 }});
+            const request = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${isCurrentCategorie}`,{ next: { revalidate: 30 }});
             const response = await request.json()
             if (!request.ok) {
                 throw new Error("Network response was not ok")
@@ -56,12 +59,12 @@ const AllRecipes =  () => {
   };
   return (
     <div className="bg-[#cedbde] " ref={ref}>
-      <div className="  w-full md:flex  justify-center align-middle  md:py-9">
+      <div className="  w-full   justify-center align-middle  md:py-9">
         <RecipesSearchBar setIsCurrentCategorie={setIsCurrentCategorie} />
       </div>
       <Suspense fallback={<Rings/>}>
          <div className="grid-cols-2 grid md:grid-cols-4 pt-10  md:pt-0 mx-5">
-          {meals.map((meal: any) => (
+          {meals.filter(items =>  search === '' || items.strMeal.toLowerCase().includes(search.toLowerCase())).map((meal: any) => (
             <div key={meal.idMeal} className="">
               <ReciepsCard meal={meal} style={style} />
             </div>

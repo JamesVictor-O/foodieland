@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const RecipeHeader = ({ headerDetails}:{ headerDetails:string[]}) => {
   return (
-    <div className="w-full md:w-[70%] mb-4 md:h-44 md:mb-0 mt-24">
+    <div className="w-full md:w-[70%] mb-4 md:h-44 md:mb-0 mt-24 md:mt-0">
       <h2 className="w-full h-10 md:h-20 font-bold md:font-semibold text-lg sm:text-2xl lg:text-4xl mb-6 md:mb-3">
         {headerDetails[0]}
       </h2>

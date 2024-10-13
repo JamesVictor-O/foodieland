@@ -55,7 +55,7 @@ const ServerSideRecieps = ({ categories }: CategoriesProps) => {
     cardHight: "434px",
     h2Width: "21%",
     imgHight: "250px",
-    imaWidth: "360px",
+    imaWidth: "560px",
     text: "24px",
     background: "#e3eff5",
   };
@@ -95,7 +95,7 @@ const ServerSideRecieps = ({ categories }: CategoriesProps) => {
 
       {
         !error && !loading && (
-          <div className="w-[100%] grid grid-cols-2 md:grid-cols-4 md:gap-10 justify-center mt-8 md:mt-20">
+          <div className="w-[100%] grid grid-cols-2 md:grid-cols-4 md:gap-2 justify-center mt-8 md:mt-20">
           {data.map((meal: any) => (
             <ReciepsCard key={meal.idMeal} meal={meal} style={style} />
           ))}

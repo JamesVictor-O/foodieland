@@ -13,7 +13,7 @@ import type { GetServerSideProps, InferGetServerSidePropsType } from "next";
 
 export default function Home() {
   return (
-      <main className=" p-3 sm:p-5 lg:p-10 ">
+      <main className=" p-3 pt-20 md:pt-0 sm:p-5 lg:p-10 ">
         <FeaturedRecipe />
         <Categories />
         <Recipes />

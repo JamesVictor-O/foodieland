@@ -26,12 +26,16 @@ const SubscribeCard = () => {
       <div className="absolute bottom-0 md:top-16- w-52 h-52 md:w-[410px] md:h-[400px]">
         <Image
           src="/subscribe/kisspng-salad.png"
-          alt="kissing-salad"
+            alt="kissing-salad"
+            width={50}
+            height={50}
           className="w-full object-contain"
         />
       </div>
       <div className="absolute bottom-1 md:top-40 right-0  w-28 h-28 md:w-[410px] md:h-[400px]">
-        <Image
+          <Image
+            width={50}
+            height={50}
           src="/subscribe/Photo-plate.png"
           alt="kissing-salad"
           className="w-full object-contain"

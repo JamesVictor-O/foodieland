@@ -25,13 +25,13 @@ const MobileMenu = ({setIsOpen}: MobileProps) => {
 
       <div className="flex flex-row items-center">
         <div className="mr-3">
-          <Image src="/assets/001-facebook.svg" alt="facebook logo" />
+          <Image width={50} height={50} src="/assets/001-facebook.svg" alt="facebook logo" className="w-5 h-5" />
         </div>
         <div className="mr-6">
-          <Image src="/assets/003-twitter.svg" alt="twitter logo" />
+          <Image width={50} height={50} src="/assets/003-twitter.svg" alt="twitter logo" className="w-5 h-5" />
         </div>
         <div>
-          <Image src="/assets/004-instagram.svg" alt="instagram logo" />
+          <Image width={50} height={50} src="/assets/004-instagram.svg" alt="instagram logo" className="w-5 h-5" />
         </div>
       </div>
     </div>

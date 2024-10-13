@@ -19,13 +19,17 @@ interface RecipesSearchBarProps {
 }
 
 const RecipesSearchBar = ({ setIsCurrentCategorie }: RecipesSearchBarProps) => {
-  const [finalCategories, setFinalCategories] = useState<categorieProps[]>([]);
-
+  const [finalCategories, setFinalCategories] = useState<string[]>([]);
+  const { setSearch } = UseRecipes()
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     e.preventDefault();
     setIsCurrentCategorie(e.target.value);
   };
-
+   
+  const handleSearch = (e:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    
+    setSearch(e.target.value)
+  }
   const { ref, inView } = useInView({ triggerOnce: false });
   useEffect(() => {
     const mealCategories = async () => {
@@ -59,7 +63,7 @@ const RecipesSearchBar = ({ setIsCurrentCategorie }: RecipesSearchBarProps) => {
   }, [inView]);
 
   return (
-    <div className=" flex  justify-center align-middle pt-20 md:pt-0 mx-8 " ref={ref}>
+    <div className=" flex  justify-center align-middle pt-20 md:pt-0 mx-8 items-center " ref={ref}>
       <div className="w-full md:w-[85%] mr-4">
         <label className="text-xl font-normal ">CATEGORIES :</label>
         <select
@@ -69,27 +73,22 @@ const RecipesSearchBar = ({ setIsCurrentCategorie }: RecipesSearchBarProps) => {
           <option value="" disabled>
             Select a category
           </option>
-          {finalCategories.map((cat, index) => (
-            <option key={index} value={cat.strCategory}>
-              {cat.strCategory}
+          {finalCategories.map((cat:string, index:number) => (
+            <option key={index} value={cat}>
+              {cat}
             </option>
           ))}
         </select>
       </div>
-      <form action="" className="flex flex-col md:flex-row md:items-center">
-        <div>
+      
+        <div className=" mt-8 md:mt-0">
           <input
+            onChange={(e:any)=>handleSearch(e)}
+            placeholder="search type of food"
             type="text"
-            className="border-black md:w-52 w-40 h-7 md:h-9 outline-none rounded-lg px-4"
+            className="border-black md:w-52 w-40 h-8 md:h-9 outline-none rounded-lg px-4"
           />
         </div>
-        <button
-          type="submit"
-          className="md:ml-4 md:p-2 mt-2 md:mt-0 rounded-lg bg-blue-300 text-white"
-        >
-          Search
-        </button>
-      </form>
     </div>
   );
 };

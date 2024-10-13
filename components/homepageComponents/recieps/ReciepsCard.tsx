@@ -44,15 +44,15 @@ const ReciepsCard:React.FC<RecipesProps> = ({ meal, style }) => {
             
             <Image src={meal.strMealThumb} alt='recipe image'width={500} height={500} className='object-contain w-full h-full' />
 
-            <div className=' absolute top-4 right-4 w-[30px] bg-white rounded-full'>
-              <Image src="recipes/Vector.png" alt=" heart"  className='w-[20px] p-3 '/>         
+            <div className=' absolute top-4 right-4 w-5 rounded-full'>
+              <Image width={50} height={50} src="/assets/likeIcon.png" alt=" heart"  className='w-full object-cover bg-transparent'/>         
             </div>
 
       </div>
       </Suspense>
        
-          <div className={`flex justify-center align-middle items-center w-[${style.h2Width}] h-[64px] mt-4`}>
-              <p className={`md:text-2xl lg:text-[${style.text}] font-semibold`}>{meal.strMeal }</p>
+          <div className={`flex items-start w-full overflow-hidden text-ellipsis whitespace-nowrap h-[54px] mt-2`}>
+              <p className={`md:text-xl lg:text-[${style.text}] font-semibold text-start`}>{meal.strMeal }</p>
           </div>
           <Time mealType={meal.strMeal} />
 

@@ -9,7 +9,7 @@ const OtherRecipes = () => {
               <div className="w-full mt-5 ">
                   <div className="w-full h-32  overflow-hidden  p-2 flex flex-row">
                       <div className="w-44 h-28 overflow-hidden rounded-xl">
-                          <Image src="/recipe2/image2.png" alt="" className="w-full object-cover h-full" />
+                          <Image width={50} height={50} src="/recipe2/image2.png" alt="" className="w-full object-cover h-full" />
                       </div>
                       <div className="w-48 h-28 ml-8 flex flex-col justify-between">
                           <h2 className="font-semibold text-xl">Chicken Meatball with Creamy Chees...</h2>
@@ -20,7 +20,7 @@ const OtherRecipes = () => {
 
                   <div className="w-full h-32  overflow-hidden  p-2 flex flex-row">
                       <div className="w-44 h-28 overflow-hidden rounded-xl">
-                          <Image src="/recipe2/image1.png" alt="" className="w-full object-cover h-full" />
+                          <Image width={50} height={50} src="/recipe2/image1.png" alt="" className="w-full object-cover h-full" />
                       </div>
                       <div className="w-48 h-28 ml-8 flex flex-col justify-between">
                           <h2 className="font-semibold text-xl">The Creamiest Creamy Chicken an...</h2>
@@ -31,7 +31,7 @@ const OtherRecipes = () => {
 
                   <div className="w-full h-32  overflow-hidden  p-2 flex flex-row">
                       <div className="w-44 h-28 overflow-hidden rounded-xl">
-                          <Image src="/recipe2/image5.png" alt="" className="w-full object-cover h-full" />
+                          <Image height={50} width={50} src="/recipe2/image5.png" alt="" className="w-full object-cover h-full" />
                       </div>
                       <div className="w-48 h-28 ml-8 flex flex-col justify-between">
                           <h2 className="font-semibold text-xl">The Best Easy One Pot Chicken and Rice</h2>

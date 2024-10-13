@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MenuList from "./menuList";
 import Image from "next/image";
 import MobileMenu from "../mobleHumburger/mobileMenu";
@@ -12,6 +12,13 @@ const Header = () => {
   const handleMenuOpen = () => {
     setIsOpen(prev=> !prev)
   }
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = "";
+    }
+  },[isOpen])
   return (
     <main className="header_main ">
       {/* mobile */}
@@ -64,13 +71,13 @@ const Header = () => {
 
         <div className="flex flex-row items-center">
           <div className="mr-3">
-            <Image width={100} height={50} src="/assets/001-facebook.svg" alt="facebook logo" />
+            <Image width={10} height={50} src="/assets/001-facebook.svg" alt="facebook logo" className=" w-7 p-2" />
           </div>
           <div className="mr-6">
-            <Image width={100} height={50} src="/assets/003-twitter.svg" alt="twitter logo" />
+            <Image width={20} height={50} src="/assets/003-twitter.svg" alt="twitter logo" className=" w-10 p-2"/>
           </div>
           <div>
-            <Image width={100} height={50} src="/assets/004-instagram.svg" alt="instagram logo" />
+            <Image width={20} height={50} src="/assets/004-instagram.svg" alt="instagram logo" className=" w-10 p-2" />
           </div>
         </div>
       </div>

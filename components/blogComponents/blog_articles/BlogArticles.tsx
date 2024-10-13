@@ -15,7 +15,7 @@ const BlogArticles = ({ post }: postProps) => {
   return (
     <div className="w-full h-40 md:h-52 flex flex-row p-2  border border-gray-300 rounded-3xl mb-4">
       <div className="overflow-hidden rounded-xl w-[70%]  md:w-72 h-32 md:h-48 ">
-        <Image src="recipes/image5.png" width={100} height={50} alt="image of food" className="w-full h-full object-fill md:object-cover"/>
+        <Image src="/recipes/image5.png" width={100} height={50} alt="image of food" className="w-full h-full object-fill md:object-cover"/>
        
       </div>
       <div className="ml-4 md:py-3">

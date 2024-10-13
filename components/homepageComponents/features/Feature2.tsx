@@ -26,7 +26,7 @@ const Feature2 = () => {
             {/* play */}
             <div className="w-[163px] bg-white h-[50px] rounded-[15px] flex justify-center items-center flex-row mt-9 ">
               <span className="text-black text-[12px]">Learn More</span>
-              <Image width={100} height={50} src="homepage/PlayCircle.svg" alt="play" className="ml-2 bg-black"/>
+              <Image width={50} height={50} src="homepage/PlayCircle.svg" alt="play" className="ml-2 w-10 bg-black"/>
             </div>
           </div>
         </div>
@@ -51,7 +51,7 @@ const Feature2 = () => {
             {/* play */}
             <div className="w-[163px] bg-black h-[50px] rounded-[15px] flex justify-center items-center flex-row mt-9 ">
               <span className="text-white text-[12px]">Learn More</span>
-              <img src="homepage/PlayCircle.svg" alt="play" className="ml-2" />
+              <img src="homepage/PlayCircle.svg" alt="play" className="ml-2 w-10" />
             </div>
           </div>
         </div>
@@ -60,27 +60,27 @@ const Feature2 = () => {
              width={100}
              height={50}
             alt="recipe image"
-            src="homepage/dressed-uniform.png"
+            src="/homepage/dressed-uniform.png"
             className="w-[100%] h-[100%] object-cover"
           />
           <Image
              width={100}
              height={50}
-            src="categories/image 21.png"
+            src="/categories/image 21.png"
             alt=""
             className=" absolute top-4 w-[80px] h-[80] left-20"
           />
           <Image
              width={100}
              height={50}
-            src="categories/image 28.png"
+            src="/categories/image 28.png"
             alt=""
             className=" absolute top-11 w-[70px] h-[70] right-32"
           />
           <Image
             width={100}
             height={50}
-            src="categories/image 20.png"
+            src="/categories/image 20.png"
             alt=""
             className=" absolute top-40 w-[60px] h-[80] right-6"
           />

@@ -13,6 +13,7 @@ export const RecipeProvider = ({ children }: { children: React.ReactNode }) => {
         current_Categorie: "Beef",
         next_Categorie:""
     })
+    const [search,setSearch]=useState<string>("")
     
     const [data, setData] = useState<any[]>([])
     
@@ -38,6 +39,8 @@ export const RecipeProvider = ({ children }: { children: React.ReactNode }) => {
         recipes,
         categories,
         setCategories,
+        setSearch,
+        search
     }
 
     return (

@@ -1,13 +1,21 @@
-"use client"
+
 
 import React from "react";
 import Time from "@/components/Time";
 import Image from "next/image";
 import Link from "next/link";
+import { url } from "inspector";
 
 
-const FeaturedRecipe = () => {
-  // const { recipes} = UseRecipes()
+const FeaturedRecipe =  async () => {
+ 
+  const getHottest_meal = async() => {
+    const request = await fetch('https://www.themealdb.com/api/json/v1/1/random.php')
+    const response = await request.json()
+    return response.meals[0]
+  }
+  const meal = await getHottest_meal()
+  
   return (
     <>
       {/* for mobile */}
@@ -49,17 +57,17 @@ const FeaturedRecipe = () => {
         </div>
      </div>
       {/* for deskstops */}
-    <div className="relative  w-[100%] h-full md:h-[449px] bg-[#E7FAFE] flex flex-col md:flex-row items-center rounded-[20px] overflow-hidden ">
+    <div className="relative   w-[100%] h-full md:h-[449px] bg-[#E7FAFE] flex flex-col md:flex-row items-center rounded-[20px] overflow-hidden ">
       <div className=" md:w-[50%] h-full p-4 lg:p-9">
         {/* hot spices */}
         <div className=" p-1 w-[40%] lg:w-[25%] h-11 flex flex-row bg-white items-center justify-center rounded-full">
-          <Image src="homepage/hotRecipe.svg" alt="Hot Recipe" />
-          <span className="ml-1 md:ml-4 font-medium font-serif">Hot recipe</span>
+          <Image width={50} height={50} src="/homepage/hotRecipe.svg" className="w-9" alt="Hot Recipe" />
+          <span className=" ml-1 md:ml-2 font-medium font-serif text-sm md:text-sm">Hot recipe</span>
         </div>
 
         {/* massage */}
         <div className="mt-3 w-full">
-          <h2 className=" text-[23px] w-full  lg:text-[46px] font-semibold  lg:w-[86%] text-black">Spicy delicious chicken wings</h2>
+            <h2 className=" text-[23px] w-full  lg:text-[46px] font-semibold  lg:w-[86%] text-black">{meal.strMeal}</h2>
           <p className="text-[13px] md:text-[16px] font-normal font-sans">Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim ad minim </p>
         </div>
            
@@ -69,7 +77,7 @@ const FeaturedRecipe = () => {
         <div className="flex flex-row  items-center mt-8 justify-between">
           {/* profile */}
           <div className="w-[163px] h-[50px] flex flex-row items-center ">
-            <Image src="homepage/Untitled design.jpg" alt="" className="object-cover w-[50px] h-[50px] rounded-full" />
+            <Image width={50} height={50} src="/homepage/Untitled design.jpg" alt="" className="object-cover w-[50px] h-[50px] rounded-full" />
             <div className="ml-4">
               <h2 className="text-[12px] font-bold">James Victor</h2>
               <span className="text-[10px]">15 March 2022</span>
@@ -77,14 +85,14 @@ const FeaturedRecipe = () => {
           </div>
 
           {/* play */}
-            <Link href={'/recipes'} className="w-[163px] bg-black h-[50px] rounded-[15px] flex justify-center items-center flex-row  ">
+            <Link href={`/recipes/${meal.idMeal}`} className="w-[163px] bg-black h-[50px] rounded-[15px] flex justify-center items-center flex-row  ">
             <span className="text-white text-[12px]">View Recipes</span>
-            <Image src="homepage/PlayCircle.svg" alt="play" className="ml-2"/>
+            <Image width={50} height={50} src="/homepage/PlayCircle.svg" alt="play" className="ml-2"/>
           </Link>
         </div>
       </div>
         <div className=" h-full md:w-[50%] ">
-          <Image src={"/homepage/Mask Group.png"} width={500} height={500} alt="recipe image" className="w-[100%] h-[100%] object-cover"/>
+          <Image src={meal.strMealThumb} width={500} height={500} alt="recipe image" className="w-[100%] h-[100%] object-cover"/>
       </div>
 
       {/* badge */}
